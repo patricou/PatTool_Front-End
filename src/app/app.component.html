@@ -1,0 +1,73 @@
+<nav class="navbar navbar-toggleable-md fixed-top navbar-inverse bg-inverse">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- <button class="btn btn-primary" (click)='getUserInfo()'>get user info</button> -->
+    <a class="navbar-brand" [routerLink]="['home']">{{ 'MENU.BRAND' | translate }} </a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     {{ 'MENU.EVENTS' | translate }}
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" [routerLink]="['even']">{{ 'MENU.EVENTSLIST' | translate }}</a>
+                    <a class="dropdown-item" [routerLink]="['neweven']">{{ 'MENU.EVENTSCREATION' | translate }}</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['results']">{{ 'MENU.RESULTS' | translate }}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['links']">{{ 'MENU.LINKS' | translate }}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['maps']">{{ 'MENU.MAPS' | translate }}</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item" [hidden]="!isAuthenticated()">
+                <a class="nav-link" (click)="open(usercontent)">{{ user.userName }}</a>
+            </li>
+            <li class="nav-item" [hidden]="!isAuthenticated()">
+                <a class="nav-link" (click)="logout()">{{ 'MENU.LOGOUT' | translate }}</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!-- Langage Selector -->
+<div class="pat-lang-selector">
+    <div class="btn-group-vertical btn-group-sm">
+        <button *ngFor="let lang of _translate.getLangs()" [value]="lang" (click)="_translate.use(lang)" class="btn btn-default" [class.btn-primary]="lang === _translate.currentLang">
+               {{ lang }}
+            </button>
+    </div>
+</div>
+<div class="pat-div">
+</div>
+<router-outlet></router-outlet>
+<!-- Modal window for live chat -->
+<ng-template #usercontent let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h5 class="modal-title"><b>{{"USERINFO.TITLE" | translate }} :</b></h5>
+
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    </div>
+    <div class="modal-body">
+        <ul class="list-group">
+
+            <li class="list-group-item"><b>{{"USERINFO.EMAIL" | translate}} </b> : {{user.addressEmail}}</li>
+            <li class="list-group-item"><b>{{"USERINFO.FIRSTNAME" | translate}} </b> : {{user.firstName}}</li>
+            <li class="list-group-item"><b>{{"USERINFO.LASTNAME" | translate}} </b> : {{user.lastName}}</li>
+            <li class="list-group-item"><b>{{"USERINFO.USERNAME" | translate}} </b> : {{user.userName}}</li>
+            <li class="list-group-item"><b>{{"USERINFO.KEYCLOAKID" | translate}} </b> : {{user.keycloakId}}</li>
+            <li class="list-group-item"><b>{{"USERINFO.ID" | translate}} </b> : {{user.id}}</li>
+        </ul>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="c('Close click')">{{"COMMUN.CLOSE" | translate }}</button>
+    </div>
+</ng-template>

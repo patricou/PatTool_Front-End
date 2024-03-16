@@ -1,0 +1,40 @@
+.pat-jumbotron {
+    background: rgba(128, 128, 128, 0.2);
+    margin: 15% 0 0 0;
+    color: yellow;
+    text-shadow: 2px 2px 2px black;
+    z-index: 9;
+}
+
+.pat-jumbotron2 {
+    background-color: black;
+    margin: 15% 0 0 0;
+    color: lightsalmon;
+    z-index: 5;
+}
+
+#pat-bg-video {
+    top: 55px;
+    left: 0px;
+    position: fixed;
+    width: 100%;
+    z-index: -2;
+}
+
+.pat-display {
+    position: static;
+    height: 100%;    ;
+}
+
+.pat-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: grey; /* Change the background color as needed */
+    color: #fff; /* Change the text color as needed */
+    padding: 10px; /* Adjust the padding as needed */
+    text-align: center;
+    font-size: small;
+  }
+  

@@ -1,0 +1,14 @@
+.pat-div {
+    margin-bottom: 75px;
+}
+
+.pat-lang-selector {
+    position: fixed;
+    right: 0px;
+    top: 70px;
+    z-index: 10;
+}
+
+[hidden] {
+    display: none !important;
+}

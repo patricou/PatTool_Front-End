@@ -1,0 +1,23 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card" *ngFor="let c of categories">
+                <div class="card-header">
+                      <b>{{c.categoryName}} :</b>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" >                        
+                        <ul>
+                            <ng-container *ngFor="let u of urllinks">
+                                <li *ngIf="u.categoryLinkID === c.categoryLinkID">
+                                    <a href="{{ u.url }}" target="_blank"> {{ u.linkName }}</a> 
+                                </li>
+                            </ng-container>
+                        </ul>                        
+                    </li>                    
+                    <br>
+                </ul>                               
+            </div>                        
+        </div>
+    </div>
+</div>

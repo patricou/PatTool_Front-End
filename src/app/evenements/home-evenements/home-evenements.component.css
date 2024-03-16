@@ -1,0 +1,26 @@
+.pat-jumbotron-element {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 10px;
+    margin-top: -20px;
+}
+
+.pat-card {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+.pat-page-btn {
+    margin-bottom: 3px;
+}
+
+.btn-filter {
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    border-bottom: 1px dotted black;
+}

@@ -1,0 +1,188 @@
+<div class="container mt-4">
+    <form #f="ngForm" novalidate autocomplete="false" (ngSubmit)=" f.valid && updateEvenement(f.value, f.valid) " class="form-horizontal">
+        <fieldset>
+            <!-- Form Name -->
+            <h2 class="d-inline">{{ "EVENTUPDT.TITLE" | translate }}</h2>
+            <small><i>Ref : {{evenement.id}}</i></small>
+            <!-- Text input
+            <div class="form-group row">
+                <label class="col-md-4 col-form-label" for="authorLastName">{{ "EVENTCREATION.EVENTAUTHORNAME" | translate }}</label>
+                <div class="col-md-6">
+                    <input id="authorLastName" readonly [(ngModel)]="author" name="author" type="text" class="form-control" required>
+                    <small><i>user.id : {{user.id}}</i></small>
+                </div>
+            </div> -->
+            <!-- Text input-->
+            <div class="form-group mt-5 row" [class.has-danger]="EvenementName.invalid && f.submitted">
+                <label class="col-md-4 col-form-label" for="EvenementName">{{ "EVENTCREATION.EVENTNAME" | translate }}</label>
+                <div class="col-md-6">
+                    <input id="EvenementName" #EvenementName="ngModel" [(ngModel)]="evenement.evenementName" name="EvenementName" type="text" placeholder="{{ 'EVENTCREATION.EVENTNAMEPLHD' | translate }}" class="form-control input-md" required>
+                    <small class="text-danger" [hidden]="!EvenementName.invalid || !f.submitted" type="danger">{{ "EVENTCREATION.EVENTNAMEERR" | translate }}</small>
+                </div>
+            </div>
+            <!-- Text input
+            <div class="form-group row" [class.has-danger]="EvenementName.invalid && f.submitted">
+                <label class="col-md-4 col-form-label" for="EvenementStatus">{{ "EVENTCREATION.EVENTSTATUS" | translate }}</label>
+                <div class="col-md-6">
+                    <input id="EvenementStatus" readonly #EvenementStatus="ngModel" [(ngModel)]="evenement.status" name="EvenementStatus" type="text" placeholder="{{ 'EVENTCREATION.EVENTSTATUSLHD' | translate }}" class="form-control input-md" required>
+                    <small class="text-danger" [hidden]="!EvenementStatus.invalid || !f.submitted" type="danger">{{ "EVENTCREATION.EVENTSTATUSERR" | translate }}</small>
+                </div>
+            </div> -->
+            <!-- Text Select-->
+            <div class="form-group row" [class.has-danger]="typeV.invalid && f.submitted">
+                <label class="col-md-4 col-form-label" for="typeV">{{ "EVENTCREATION.EVENTTYPE" | translate }} </label>
+                <div class="col-md-6">
+                    <select id="typeV" [style.color]="typeColor" #typeV="ngModel" [(ngModel)]="evenement.type" name="type" class="form-control" required>
+                        <option value="" disabled selected style="color:#dcdcdc;">{{"EVENTCREATION.EVENTTYPEPLHD" | translate }}</option>
+                        <option value="1" style="color:black">{{"EVENTCREATION.TYPE.VTT" | translate }}</option>
+                        <option value="2" style="color:black">{{"EVENTCREATION.TYPE.SKI" | translate }}</option>
+                        <option value="3" style="color:black">{{"EVENTCREATION.TYPE.RUN" | translate }}</option>
+                        <option value="4" style="color:black">{{"EVENTCREATION.TYPE.WALK" | translate }}</option>                        
+                        <option value="5" style="color:black">{{"EVENTCREATION.TYPE.BIKE" | translate }}</option>                     
+                    </select>
+                    <small class="text-danger" [hidden]="!typeV.invalid || !f.submitted" type="danger">{{ "EVENTCREATION.EVENTTYPEERR" | translate }}</small>
+                </div>
+            </div>
+            <!-- Difficulty Level-->
+            <div class="form-group row" [class.has-danger]="diffculty.invalid && f.submitted">
+                <label class="col-md-4 col-form-label" for="diffculty">{{ "EVENTCREATION.DIFF" | translate }} </label>
+                <div class="col-md-6">
+                    <select id="diffculty" [style.color]="diffColor" #diffculty="ngModel" [(ngModel)]="evenement.diffculty" name="diffculty" class="form-control" required>
+                         <option value="" disabled selected style="color:#dcdcdc;">{{"EVENTCREATION.EVENTDIFFPLHD" | translate }}</option>
+                        <option value="1" style="color:black">{{"EVENTCREATION.DIFF.0" | translate }}</option>
+                        <option value="2" style="color:black">{{"EVENTCREATION.DIFF.1" | translate }}</option>
+                        <option value="3" style="color:black">{{"EVENTCREATION.DIFF.2" | translate }}</option>
+                        <option value="4" style="color:black">{{"EVENTCREATION.DIFF.3" | translate }}</option>                        
+                        <option value="5" style="color:black">{{"EVENTCREATION.DIFF.4" | translate }}</option>                     
+                    </select>
+                    <small class="text-danger" [hidden]="!diffculty.invalid || !f.submitted" type="danger">{{ "EVENTCREATION.DIFFERR" | translate }}</small>
+                </div>
+            </div>
+            <!-- Text input-->
+            <div class="form-group row" [class.has-danger]="beginEventDateV.invalid && f.submitted">
+                <label class="col-md-4 col-form-label" for="beginEventDateV">{{ "EVENTCREATION.BEGINEVENTDT" | translate }}</label>
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <input type="text" id="beginEventDate" #dp1="ngx-mydatepicker" ngx-mydatepicker [options]="myOptions" #beginEventDateV="ngModel" [(ngModel)]="beginEventDate" name="beginEventDate" placeholder="{{ 'EVENTCREATION.BEGINEVENTDTPLHD' | translate }}" class="form-control"
+                            required>
+                        <span class="input-group-btn">
+                            <!--<button type="button" aria-hidden="true" class="btn btn-primary" (click)="dp1.clearDate()" [class.butgrppat]="beginEventDateV.invalid && f.submitted">
+                                    <i class="glyphicon glyphicon-remove"></i>
+                                </button>-->
+                             <button type="button" class="btn btn-primary" (click)="dp1.toggleCalendar()" [class.butgrppat]="beginEventDateV.invalid && f.submitted">
+                                 <i class="fa fa-calendar"></i>
+                             </button>                           
+                        </span>
+                    </div>
+                    <small class="text-danger" [hidden]="!beginEventDateV.invalid || !f.submitted" type="danger">{{ "EVENTCREATION.BEGINEVENTDTERR" | translate }}</small>
+                </div>
+            </div>
+            <!-- Text input-->
+            <div class="form-group row" [class.has-danger]="endEventDateV.invalid && f.submitted">
+                <label class="col-md-4 col-form-label" for="endEventDateV">{{ "EVENTCREATION.ENDEVENTDT" | translate }}</label>
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <input id="endEventDateV" #endEventDateV="ngModel" [(ngModel)]="endEventDate" name="endEventDate" placeholder="{{ 'EVENTCREATION.ENDEVENTDTPLHD' | translate }}" class="form-control" required ngx-mydatepicker [options]="myOptions" #dp2="ngx-mydatepicker">
+                        <span class="input-group-btn">                    
+                            <button type="button" class="btn btn-primary" (click)="dp2.toggleCalendar()" [class.butgrppat]="endEventDateV.invalid && f.submitted">
+                               <i class="fa fa-calendar" aria-hidden="true"></i>
+                            </button>   
+                        </span>
+                    </div>
+                    <small class="text-danger" [hidden]="!endEventDateV.invalid || !f.submitted" type="danger">{{ "EVENTCREATION.ENDEVENTDTERR" | translate }}</small>
+                </div>
+            </div>
+            <!-- Begin Hour-->
+            <div class="form-group row" [class.has-danger]="startHour.invalid && f.submitted">
+                <label class="col-md-4 col-form-label" for="startHour">{{ "EVENTCREATION.STARTHOUR" | translate }}</label>
+                <div class="col-md-6">
+                    <input id="startHour" #startHour="ngModel" [(ngModel)]="evenement.startHour" name="startHour" placeholder="{{ 'EVENTCREATION.STARTHOURHLP' | translate }}" class="form-control input-md" required>
+                    <small class="text-danger" [hidden]="!startHour.invalid || !f.submitted" type="danger"> {{ "EVENTCREATION.STARTHOURERR" | translate }}  </small>
+                </div>
+            </div>
+            <!-- Estimated duration-->
+            <div class="form-group row" [class.has-danger]="duraest.invalid && f.submitted">
+                <label class="col-md-4 col-form-label" for="duraest">{{ "EVENTCREATION.DURAEST" | translate }}</label>
+                <div class="col-md-6">
+                    <input id="duraest" #duraest="ngModel" [(ngModel)]="evenement.durationEstimation" name="duraest" placeholder="{{ 'EVENTCREATION.DURAESTHLP' | translate }}" class="form-control input-md" required>
+                    <small class="text-danger" [hidden]="!duraest.invalid || !f.submitted" type="danger"> {{ "EVENTCREATION.DURAESTERR" | translate }}  </small>
+                </div>
+            </div>
+            <!-- Location-->
+            <div class="form-group row" [class.has-danger]="startLocation.invalid && f.submitted">
+                <label class="col-md-4 col-form-label" for="startLocation">{{ "EVENTCREATION.STARTLOCATION" | translate }}</label>
+                <div class="col-md-6">
+                    <input id="startLocation" #startLocation="ngModel" [(ngModel)]="evenement.startLocation" name="startLocation" placeholder="{{ 'EVENTCREATION.STARTLOCATIONHLP' | translate }}" class="form-control input-md" required>
+                    <small class="text-danger" [hidden]="!startLocation.invalid || !f.submitted" type="danger"> {{ "EVENTCREATION.STARTLOCATIONERR" | translate }}  </small>
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group row" [class.has-danger]="mapV.invalid && f.submitted">
+                <label class="col-md-4 col-form-label" for="map">{{ "EVENTCREATION.MAPURL" | translate }}</label>
+                <div class="col-md-6">
+                    <input id="map" #mapV="ngModel" [(ngModel)]="evenement.map" name="map" placeholder="{{ 'EVENTCREATION.MAPURLPLHD' | translate }}" class="form-control input-md">
+                    <small class="text-danger" [hidden]="!mapV.invalid || !f.submitted" type="danger"> {{ "EVENTCREATION.MAPURLERR" | translate }} <a href="https://www.geoportail.gouv.fr/carte"><i class="fa fa-map" aria-hidden="true"></i> </a> </small>
+                </div>
+            </div>
+            <!-- Text input -->
+            <div class="form-group row" [class.has-danger]="photosUrlV.invalid && f.submitted">
+                <label class="col-md-4 col-form-label" for="photosUrl">{{ "EVENTCREATION.PHOTOSURL" | translate }}</label>
+                <div class="col-md-6">
+                    <input id="photosUrl" #photosUrlV="ngModel" [(ngModel)]="evenement.photosUrl" name="photosUrl" placeholder="{{ 'EVENTCREATION.PHOTOSURLPLHD' | translate }}" class="form-control input-md">
+                    <small class="text-danger" [hidden]="!photosUrlV.invalid || !f.submitted" type="danger"> {{ "EVENTCREATION.PHOTOSURLERR" | translate }}<i class="fa fa-picture-o" aria-hidden="true"></i></small>
+                </div>
+            </div>
+            <!-- Text input-->
+            <div class="form-group row" [class.has-danger]="openInscriptionDateV.invalid && f.submitted">
+                <label class="col-md-4 col-form-label" for="Open Inscription Date">{{ "EVENTCREATION.OPENEVENTINSCRIPTDT" | translate }}</label>
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <input id="OpenInscriptionDate" style="float:none" #openInscriptionDateV="ngModel" [(ngModel)]="openInscriptionDate" name="openInscriptionDate" placeholder="{{ 'EVENTCREATION.OPENEVENTINSCRIPTDTPLHD' | translate }}" class="form-control input-md" required
+                            ngx-mydatepicker [options]="myOptions" #dp4="ngx-mydatepicker">
+                        <span class="input-group-btn">
+                        <button type="button" class="btn btn-primary" (click)="dp4.toggleCalendar()" [ngClass]="{'butgrppat' : openInscriptionDateV.invalid && f.submitted}">
+                            <i class="fa fa-calendar" aria-hidden="true"></i>
+                        </button>   
+                        </span>
+                    </div>
+                    <small class="text-danger" [hidden]="!openInscriptionDateV.invalid || !f.submitted" type="danger"> {{ "EVENTCREATION.OPENEVENTINSCRIPTDTERR" | translate }}</small>
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group row" [class.has-danger]="closeInscriptionDateV.invalid && f.submitted">
+                <label class="col-md-4 col-form-label" for="closeInscriptionDate">{{ "EVENTCREATION.CLOSEEVENTINSCRIPTDT" | translate }}</label>
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <input id="closeInscriptionDate" style="float:none" #closeInscriptionDateV="ngModel" [(ngModel)]="closeInscriptionDate" name="closeInscriptionDate" placeholder="{{ 'EVENTCREATION.CLOSEEVENTINSCRIPTDTPLHD' | translate }}" class="form-control input-md"
+                            required ngx-mydatepicker [options]="myOptions" #dp3="ngx-mydatepicker">
+                        <div class="input-group-btn">
+                            <button [class.butgrppat]="closeInscriptionDateV.invalid && f.submitted" type="button" class="btn btn-primary" (click)="dp3.toggleCalendar()">
+                               <i class="fa fa-calendar" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <small class="text-danger" [hidden]="!closeInscriptionDateV.invalid || !f.submitted" type="danger"> {{ "EVENTCREATION.CLOSEEVENTINSCRIPTDTERR" | translate }}</small>
+                </div>
+            </div>
+
+            <!-- Textarea -->
+            <div class="form-group row" [class.has-danger]="CommentsV.invalid  && f.submitted">
+                <label class="col-md-4 col-form-label" for="comments">{{ "EVENTCREATION.EVENTDESC" | translate }}</label>
+                <div class="col-md-6">
+                    <textarea #CommentsV="ngModel" [(ngModel)]="evenement.comments" class="form-control" id="comments" required name="comments">Enter Event Description</textarea>
+                    <small class="text-danger" [hidden]="!CommentsV.invalid || !f.submitted" type="danger"> {{ "EVENTCREATION.EVENTDESCERR" | translate }}</small>
+                </div>
+            </div>
+
+            <!-- Button (Double) -->
+            <div class="form-group row">
+                <div class="col-md-8">
+                    <button id="submitevent" name="submitevent" class="btn btn-primary">{{ "EVENTUPDT.SUBMIT" | translate }}</button>
+                    <a [routerLink]="['/even']" id="cancelevent" name="cancelevent" class="btn btn-danger">{{ "EVENTCREATION.CANCEL" | translate }} </a>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
