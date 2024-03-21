@@ -61,7 +61,7 @@ export class KeycloakService {
           })
           .error(() => {
             console.log('Failed to refresh token');
-            window.location.href = "https://www.patrickdeschamps.com:8000";
+            window.location.href = "https://www.patrickdeschamps.com";
           });
       } else {
         reject('Not loggen in');

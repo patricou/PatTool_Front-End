@@ -1,6 +1,6 @@
 {
     "MENU": {
-        "BRAND": "PATTOOLS",
+        "BRAND": "PATTOOL",
         "LANG": "Language",
         "EVENTS": "Activities",
         "EVENTSLIST": "Activities List",
@@ -15,7 +15,7 @@
     "HOME": {
         "CITATION": "patrickdeschamps.com",
         "AUTHOR": "Patrick DESCHAMPS",
-        "HOMETITLE": "Tools for Information",
+        "HOMETITLE": "Private Site",
         "HOMESUBTITLE": "© Patrick Deschamps",
         "SECTION2TITLE": " home-page, section 2 (en).",
         "SECTION3TITLE": " home-page, section 3 (en)."
@@ -166,5 +166,10 @@
         "LASTNAME": "Last Name",
         "USERNAME": "User Name",
         "KEYCLOAKID": "KeycloakId"
+    },
+    "UPLOADFILE": {
+        "MENU": "Upload Files",
+        "BUTTONSUBMIT": "Submit",
+        "TITLE": "Chose Files"
     }
 }

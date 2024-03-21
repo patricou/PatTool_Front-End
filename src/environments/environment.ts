@@ -11,11 +11,13 @@ export const environment = {
     //serviceBaseUrl: 'https://www.patrickdeschamps.com:8543/database',
     //API_URL: "/api/",
     //API_URL4FILE: "/uploadfile/",
+    //API_URL4FILEONDISK: "/uploadondisk/",
     //dev
     keykloakBaseUrl: 'http://localhost:8080/auth',
     serviceBaseUrl: 'http://localhost:8080/database',    
     API_URL: "http://localhost:8000/api/",
     API_URL4FILE: "http://localhost:8000/uploadfile/",
+    API_URL4FILEONDISK: "http://localhost:8000/uploadondisk/",
     
     //API_URL: "http://192.168.1.4:8000/api/",
     //API_URL4FILE: "http://192.168.1.4:8000/uploadfile/",

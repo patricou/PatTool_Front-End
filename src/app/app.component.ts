@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { KeycloakService } from './keycloak/keycloak.service';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
@@ -6,6 +6,7 @@ import { Member } from './model/member';
 import { MembersService } from './services/members.service';
 import { CommonvaluesService } from './services/commonvalues.service';
 import { environment } from '../environments/environment';
+import { FileService } from './services/file.service';
 
 @Component({
     selector: 'app-root',
@@ -15,12 +16,16 @@ import { environment } from '../environments/environment';
 export class AppComponent implements OnInit {
 
     public user: Member;
+    private selectedFiles: File[];
+    private resultSaveOndisk: string;
 
     constructor(public _translate: TranslateService,
         public _kc: KeycloakService,
         public _membersService: MembersService,
         public _commonValuesServices: CommonvaluesService,
-        public modalService: NgbModal, ) {
+        public modalService: NgbModal,
+        public _fileService: FileService) {
+        this.selectedFiles = [];
     }
 
     ngOnInit() {
@@ -66,6 +71,8 @@ export class AppComponent implements OnInit {
     public closeResult: string;
 
     public open(content) {
+        this.resultSaveOndisk="";
+
         this.modalService.open(content).result.then((result) => {
             this.closeResult = `Closed with: ${result}`;
         }, (reason) => {
@@ -82,4 +89,37 @@ export class AppComponent implements OnInit {
             return `with: ${reason}`;
         }
     }
+
+    onFilesSelected(event) {
+        this.resultSaveOndisk="";
+        this.selectedFiles = event.target.files;
+    }
+
+    onSubmit() {
+
+        if (this.selectedFiles.length === 0) {
+            console.log('Aucun fichier sélectionné.');
+            return;
+        };
+
+        const formData = new FormData();
+        for (let file of this.selectedFiles) {
+            console.log(JSON.stringify("file : " + file + " / file.name : " + file.name));
+            formData.append('files', file, file.name);
+        }
+
+
+        this._fileService.postFileOnDisk(formData)
+            .subscribe(
+                (response) => {
+                    console.log('Upload successful', response);
+                    this.resultSaveOndisk = "Upload OK : " + response;
+                },
+                (error) => {
+                    console.error('Upload error', error);
+                    this.resultSaveOndisk = "Error When uploading : " + error;
+                }
+            );
+    }
+
 }

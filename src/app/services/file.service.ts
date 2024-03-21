@@ -13,6 +13,7 @@ import { KeycloakService } from '../keycloak/keycloak.service';
 export class FileService {
 
     private API_URL: string = environment.API_URL;
+    private API_URL4FILEONDISK: string = environment.API_URL4FILEONDISK;
 
     constructor(private _http: Http, private _keycloakService: KeycloakService) {
     }
@@ -25,7 +26,6 @@ export class FileService {
             return new Headers({
                 'Author': 'Zeus',
                 'Authorization': 'Bearer ' + token
-
             })
         })
     }
@@ -33,6 +33,13 @@ export class FileService {
     getFile(fileId: string): Observable<any> {
         return this.getHeaderWithToken().concatMap(headers =>
             this._http.get(this.API_URL + "file/" + fileId, { headers: headers, 'responseType': ResponseContentType.ArrayBuffer })
+        )
+    }
+
+    // POST file on disk    
+    postFileOnDisk(formData: FormData): Observable<any> {
+        return this.getHeaderWithToken().concatMap(headers =>
+            this._http.post(this.API_URL4FILEONDISK , formData, { headers: headers, 'responseType': ResponseContentType.ArrayBuffer })
         )
     }
 }

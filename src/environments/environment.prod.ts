@@ -3,11 +3,12 @@ export const environment = {
     // Keycloak url
     //keykloakBaseUrl: 'http://192.168.1.39:8080/auth',
     //serviceBaseUrl:  'http://192.168.1.39:8080/database',
-    keykloakBaseUrl: 'http://localhost:8080/auth',
-    serviceBaseUrl:  'http://localhost:8080/database',
-    // Rest url config
+    keykloakBaseUrl: 'https://www.patrickdeschamps.com:8543/auth',
+    serviceBaseUrl: 'https://www.patrickdeschamps.com:8543/database',
     API_URL: "/api/",
     API_URL4FILE: "/uploadfile/",
+    API_URL4FILEONDISK: "/uploadondisk/",
+
     //fire base config
     firebase: {
         apiKey: "AIzaSyBJFAKMyDO_lmqBYUwW6CWjBIMTHyFGZKc",
