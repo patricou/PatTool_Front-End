@@ -26,9 +26,10 @@ export class ChatComponent implements OnInit {
     });
   }
 
-  Send(desc: string) {
+  Send(desc: string) 
+  {     
     this.items.push({
-      'message': desc,
+      'message': this.msgVal,
       'date': firebase.database.ServerValue.TIMESTAMP,
       'user': {
         firstName: this.user.firstName,

@@ -88,7 +88,7 @@
         "TYPE.BIKE": "Bike",
         "TYPE.PARTY": "Party",
         "TYPE.VACATION": "Vacation",
-        "TYPE.TRAVEL": "Travel",
+        "TYPE.TRAVEL": "Travel",        
         "ISSUE": "Issue",
         "ISSUEDETAIL": "Issue when save the evenement :",
         "ISSUEDELDETAIL": "Issue when deleting the evenement :"
@@ -148,7 +148,8 @@
     },
     "RESULTS": {
         "TITLE": "Global Real Time Chat",
-        "MESSAGEPLHD": "Enter a message or commentary here .... "
+        "MESSAGEPLHD": "Enter a message or commentary here .... ",
+        "SEND": "Enter"
     },
     "MAP": {
         "TITLE": "Main Features",
@@ -168,7 +169,7 @@
         "KEYCLOAKID": "KeycloakId"
     },
     "UPLOADFILE": {
-        "MENU": "Upload Files",
+        "MENU": "Upload",
         "BUTTONSUBMIT": "Submit",
         "TITLE": "Chose Files"
     }

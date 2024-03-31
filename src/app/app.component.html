@@ -31,7 +31,7 @@
                 <a class="nav-link" [routerLink]="['maps']">{{ 'MENU.MAPS' | translate }}</a>
             </li>
         </ul>
-        <ul class="navbar-nav ml-auto">          
+        <ul class="navbar-nav ml-auto">
             <li class="nav-item" [hidden]="!isAuthenticated()">
                 <a class="nav-link" (click)="open(usercontent)">{{ user.userName }}</a>
             </li>
@@ -75,7 +75,8 @@
 
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" (click)="c('Close click')">{{"COMMUN.CLOSE" | translate }}</button>
+        <button type="button" class="btn btn-secondary" (click)="c('Close click')">{{"COMMUN.CLOSE" | translate
+            }}</button>
     </div>
 </ng-template>
 <!-- Modal window for Upload files -->
@@ -88,15 +89,17 @@
         </button>
     </div>
     <div class="modal-body">
-        <ul class="list-group">      
-            <form (ngSubmit)="onSubmit()" enctype="multipart/form-data" >
-                <input  type="file" name="files" multiple (change)="onFilesSelected($event)" />
+        <ul class="list-group">
+            <form (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+                <input type="file" name="files" multiple (change)="onFilesSelected($event)" />
+                <br><br>
                 <button class="btn-primary" type="submit">{{"UPLOADFILE.BUTTONSUBMIT" | translate}}</button>
+                <div  class="upfr">{{resultSaveOndisk}}</div>
             </form>
         </ul>
     </div>
     <div class="modal-footer">
-        {{resultSaveOndisk}}
-        <button type="button" class="btn btn-secondary" (click)="c('Close click')">{{"COMMUN.CLOSE" | translate}}</button>
+        <div><button type="button" class="btn btn-secondary" (click)="c('Close click')">{{"COMMUN.CLOSE" |
+            translate}}</button></div>
     </div>
-</ng-template> 
+</ng-template>

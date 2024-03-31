@@ -112,12 +112,12 @@ export class AppComponent implements OnInit {
         this._fileService.postFileOnDisk(formData)
             .subscribe(
                 (response) => {
-                    console.log('Upload successful', response);
-                    this.resultSaveOndisk = "Upload OK : " + response;
+                    //console.log('|--> Upload successful : ' + response);
+                    this.resultSaveOndisk = "Upload OK.         ";
                 },
                 (error) => {
-                    console.error('Upload error', error);
-                    this.resultSaveOndisk = "Error When uploading : " + error;
+                    console.error('|--> Upload error : ' + error);
+                    this.resultSaveOndisk =  "Issue to Upload File(s).      ";                  
                 }
             );
     }

@@ -39,7 +39,7 @@ export class FileService {
     // POST file on disk    
     postFileOnDisk(formData: FormData): Observable<any> {
         return this.getHeaderWithToken().concatMap(headers =>
-            this._http.post(this.API_URL4FILEONDISK , formData, { headers: headers, 'responseType': ResponseContentType.ArrayBuffer })
+            this._http.post(this.API_URL4FILEONDISK , formData, { headers: headers, 'responseType': ResponseContentType.Json })
         )
     }
 }

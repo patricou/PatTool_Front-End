@@ -12,3 +12,16 @@
 [hidden] {
     display: none !important;
 }
+
+.upfr {
+    text-align: center;
+    color: red;
+    background-color: yellow;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: red; /* Couleur que vous souhaitez appliquer lorsque la souris passe dessus */
+    background-color: yellow;
+    font-weight: bold;
+}

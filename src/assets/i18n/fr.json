@@ -148,7 +148,8 @@
     },
     "RESULTS": {
         "TITLE": "Dicussion Globale en temps réel",
-        "MESSAGEPLHD": "Entrez un Message ou Commentaire ici .... "
+        "MESSAGEPLHD": "Entrez un Message ou Commentaire ici .... ",
+        "SEND": "Envoyez"
     },
     "MAP": {
         "TITLE": "Principales Caractéristiques",
@@ -168,8 +169,8 @@
         "KEYCLOAKID": "KeycloakId"
     },
     "UPLOADFILE": {
-        "MENU": "Télécharger des Fichiers",
-        "BUTTONSUBMIT": "Soumettre",
+        "MENU": "Télécharger",
+        "BUTTONSUBMIT": "Envoyer",
         "TITLE": "Choisir des Fichiers"
     }
 }
