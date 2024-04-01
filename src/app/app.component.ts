@@ -104,12 +104,12 @@ export class AppComponent implements OnInit {
 
         const formData = new FormData();
         for (let file of this.selectedFiles) {
-            console.log(JSON.stringify("file : " + file + " / file.name : " + file.name));
+            console.log(JSON.stringify("file : " + file + " / file.name : " + file.name+ " / User : " + this.user.firstName +" "+this.user.lastName));
             formData.append('files', file, file.name);
         }
 
 
-        this._fileService.postFileOnDisk(formData)
+        this._fileService.postFileOnDisk(formData, this.user)
             .subscribe(
                 (response) => {
                     //console.log('|--> Upload successful : ' + response);

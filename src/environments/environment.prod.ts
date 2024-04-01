@@ -1,14 +1,17 @@
+// The file contents for the current environment will overwrite these during build.
+// The build system defaults to the dev environment which uses `environment.ts`, but if you do
+// `ng build --env=prod` then `environment.prod.ts` will be used instead.
+// The list of which env maps to which file can be found in `.angular-cli.json`.
+
 export const environment = {
-    production: true,
+    production: false,
     // Keycloak url
-    //keykloakBaseUrl: 'http://192.168.1.39:8080/auth',
-    //serviceBaseUrl:  'http://192.168.1.39:8080/database',
+    //prod
     keykloakBaseUrl: 'https://www.patrickdeschamps.com:8543/auth',
     serviceBaseUrl: 'https://www.patrickdeschamps.com:8543/database',
     API_URL: "/api/",
     API_URL4FILE: "/uploadfile/",
     API_URL4FILEONDISK: "/uploadondisk/",
-
     //fire base config
     firebase: {
         apiKey: "AIzaSyBJFAKMyDO_lmqBYUwW6CWjBIMTHyFGZKc",

@@ -8,8 +8,8 @@
         "RESULTS": "Discussion",
         "MAPS": "A Propos",
         "MEMBERS": "Membres",
-        "LOGIN": "Connection",
-        "LOGOUT": "Déconnection",
+        "LOGIN": "Connexion",
+        "LOGOUT": "Déconnexion",
         "LINKS":"Liens"
     },
     "HOME": {
