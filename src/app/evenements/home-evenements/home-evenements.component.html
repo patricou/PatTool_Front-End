@@ -56,7 +56,8 @@
 <div class="container-fluid ">
     <div class="row ">
         <div class="col-lg-4 card-group pat-card " *ngFor=" let evenement of evenements ">
-            <element-evenement class="card" [user]="user" [evenement]="evenement " (updateFileUploaded)="updateFileUploadedInEvent($event) " (addMember)="addMemberInEvent($event) " (delMember)="delMemberInEvent($event) " (updateEvenement)="updEvent($event)
+            <element-evenement class="card" [user]="user" [evenement]="evenement" (updateFileUploaded)="updateFileUploadedInEvent($event) " 
+            (addMember)="addMemberInEvent($event) " (delMember)="delMemberInEvent($event) " (updateEvenement)="updEvent($event)
             " (delEvenement)="delEvent($event)"></element-evenement>
         </div>
     </div>

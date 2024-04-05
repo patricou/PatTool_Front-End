@@ -39,6 +39,7 @@ export class HomeEvenementsComponent implements OnInit, AfterViewInit {
 	public elementsByPage: number = this._commonValuesService.getElementsByPage();
 	public dataFIlter: string = this._commonValuesService.getDataFilter();
 	public pages: number[];
+	public visible: boolean
 	@ViewChild('searchterm')
 	public searchterm: ElementRef;
 
@@ -50,8 +51,8 @@ export class HomeEvenementsComponent implements OnInit, AfterViewInit {
 	}
 
 	ngOnInit() {
-		this.getEvents(this.dataFIlter);
 		this.user = this._memberService.getUser();
+		this.getEvents(this.dataFIlter);
 	}
 
 	ngAfterViewInit() {
@@ -72,26 +73,47 @@ export class HomeEvenementsComponent implements OnInit, AfterViewInit {
 			((err: any) => console.error(err)),
 			() => console.log('complete')
 		)
-
 	}
+
+	private waitForNonEmptyValue(): Promise<void> {
+		return new Promise<void>((resolve) => {
+			const checkValue = () => {
+				if (this.user.id !== "") {
+					resolve();
+				} else {
+					let now = new Date();
+					console.log("This.user.id is still empty "+now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds()+'.'+now.getMilliseconds());
+					setTimeout(checkValue, 100); // Appeler checkValue de manière récursive après 100ms
+				}
+			};
+			checkValue(); // Déclencher la première vérification
+		});
+	}
+
 	// Get the evenements list with pagination
 	public getEvents(data: any) {
 		let searchString: string = "*";
 		if (data !== "")
 			searchString = data == "" ? "*" : data;
-		this._evenementsService
-			.getEvents(searchString, this.pageNumber, this.elementsByPage)
-			.subscribe(res => {
-				this.evenements = res.content;
-				this.totalElements = res.totalElements;
-				this.totalPages = res.totalPages;
-				this.pageNumber = res.number;
-				this._commonValuesService.setPageNumber(this.pageNumber);
-				this.pages = Array.from(Array(this.totalPages), (x, i) => i);
-			},
-				err => alert("Error when getting Events " + err)
-			);
 
+		this.waitForNonEmptyValue().then(() => {
+			let now = new Date();
+			
+			console.log("4|------------------> This.user.id is no more null :", this.user.id + " at " +now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds()+'.'+now.getMilliseconds());
+			
+			this._evenementsService
+				.getEvents(searchString, this.pageNumber, this.elementsByPage, this.user.id)
+				.subscribe(res => {
+					this.evenements = res.content;
+					this.totalElements = res.totalElements;
+					this.totalPages = res.totalPages;
+					this.pageNumber = res.number;
+					this._commonValuesService.setPageNumber(this.pageNumber);
+					this.pages = Array.from(Array(this.totalPages), (x, i) => i);
+				},
+					err => alert("Error when getting Events " + JSON.stringify(this.user))
+				);
+		});
 	};
 
 	public addMemberInEvent(evenement: Evenement) {
@@ -165,10 +187,12 @@ export class HomeEvenementsComponent implements OnInit, AfterViewInit {
 		this._commonValuesService.setElementsByPage(this.elementsByPage);
 		this.getEvents(this.dataFIlter);
 	}
+
 	public clearFilter() {
 		this.dataFIlter = "";
 		this.changeFiltre();
 	}
+
 	// Allow to use arrow for pagination
 	@HostListener('window:keyup', ['$event'])
 	keyEvent(event: KeyboardEvent) {
@@ -178,5 +202,13 @@ export class HomeEvenementsComponent implements OnInit, AfterViewInit {
 		if (event.keyCode === KEY_CODE.LEFT_ARROW) {
 			this.changePreviousPage();
 		}
+	}
+
+	public checkVisibility(evenement: Evenement) {
+		console.log(evenement.evenementName + " --> visibility : " + evenement.visibility);
+		console.log(evenement.evenementName + " --> Author : " + JSON.stringify(evenement.author.id));
+		console.log(evenement.evenementName + " --> Current user : " + this.user.id);
+		console.log("visibility = " + (evenement.visibility === null || evenement.visibility === 'public') || (evenement.visibility === 'private' && evenement.author.id === this.user.id));
+		this.visible = (evenement.visibility === null || evenement.visibility === 'public') || (evenement.visibility === 'private' && evenement.author.id === this.user.id);
 	}
 }

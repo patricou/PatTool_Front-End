@@ -47,7 +47,7 @@ export class CreateEvenementComponent implements OnInit {
 		this.user = this._memberService.getUser();
 
 		// init new event fields
-		this.evenement = new Evenement(this.user, new Date(), "", new Date(), new Date(), new Date(), "", "", "", "", [], new Date(), "Open", "", [], "", "", "", "", 0, 0);
+		this.evenement = new Evenement(this.user, new Date(), "", new Date(), new Date(), new Date(), "", "", "", "", [], new Date(), "Open", "", [], "", "", "", "", 0, 0, "public");
 		this.author = this.evenement.author.firstName + " " + this.evenement.author.lastName;
 
 		/*this.beginEventDate = { date: { 

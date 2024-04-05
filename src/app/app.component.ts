@@ -64,7 +64,7 @@ export class AppComponent implements OnInit {
             // reset the user in the service ( with id ) otherwyse it is not present ( which is strange )
             this._membersService.setUser(this.user);
         },
-            err => alert("Error when retieving MLB user id")
+            err => alert("Error when retieving MLB user id " + err)
         );
     }
     // for modal chat

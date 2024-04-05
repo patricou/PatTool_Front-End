@@ -26,7 +26,7 @@ export class ChatComponent implements OnInit {
     });
   }
 
-  Send(desc: string) 
+  Send() 
   {     
     this.items.push({
       'message': this.msgVal,

@@ -27,15 +27,15 @@ export class EvenementsService {
 		return tokenObservable1.map(token => {
 			return new Headers({
 				'Accept': 'application/json',
-				'content-type': 'application/json',
+				'content-type': 'application/json',				
 				'Authorization': 'Bearer ' + token
 			})
 		})
 	}
 	// GET + %name%
-	getEvents(name: string, pageNumber: number, elementsByPage: number): Observable<any> {
+	getEvents(name: string, pageNumber: number, elementsByPage: number,userId:string): Observable<any> {
 		return this.getHeaderWithToken().concatMap(headers =>
-			this._http.get(this.API_URL + "even/" + name + "/" + pageNumber + "/" + elementsByPage, { headers: headers })
+			this._http.get(this.API_URL + "even/" + name + "/" + pageNumber + "/" + elementsByPage+"/"+userId, { headers: headers })
 				.map(res => res.json()))
 	}
 
@@ -65,7 +65,8 @@ export class EvenementsService {
 					evenement.startLocation,
 					evenement.durationEstimation,
 					evenement.ratingPlus,
-					evenement.ratingMinus
+					evenement.ratingMinus,
+					evenement.visibility
 				)
 			}))
 	}

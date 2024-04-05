@@ -10,12 +10,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-
 import { HomeModule } from "./home/home.module";
 import { EvenementsModule } from './evenements/evenements.module';
 import { ChatModule } from './communications/communications.module';
 import { MapsModule } from './other/other.module';
-
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home/home-page/home-page.component';
 import { HomeEvenementsComponent } from './evenements/home-evenements/home-evenements.component';
@@ -32,6 +30,7 @@ import { FileService } from './services/file.service';
 import { environment } from '../environments/environment';
 import { LinksComponent } from './links/links/links.component';
 import { LinksModule } from './links/links.module';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: Http) {
@@ -81,7 +80,10 @@ export function HttpLoaderFactory(http: Http) {
 		KeycloakHttp,
 		MembersService,
 		FileService,
-		CommonvaluesService
+		CommonvaluesService,	
+		// to be able to do F5 in prod		
+		{ provide: LocationStrategy, useClass: HashLocationStrategy },
+		{ provide: TranslateLoader, useFactory: HttpLoaderFactory, deps: [Http] }
 	],
 	bootstrap: [AppComponent]
 })

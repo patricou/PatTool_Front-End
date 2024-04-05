@@ -24,6 +24,7 @@ export class Evenement {
         public startLocation: string,
         public durationEstimation: string,
         public ratingPlus: number,
-        public ratingMinus: number
+        public ratingMinus: number,
+        public visibility: string
     ) { }
 }

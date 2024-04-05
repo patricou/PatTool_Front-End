@@ -15,7 +15,7 @@ export class KeycloakService {
       "realm": 'pat-realm',
       "clientId": 'tutorial-frontend',
       "auth-server-url": "/auth",
-      "ssl-required": "none",
+      "ssl-required": "true",
       "resource": "tutorial-frontend",
       "public-client": true,
       "use-resource-role-mappings": true
