@@ -1,12 +1,10 @@
 <nav class="navbar navbar-toggleable-md fixed-top navbar-inverse bg-inverse">
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-        aria-label="Toggle navigation">
+    <button class="navbar-toggler navbar-toggler-right" type="button" (click)="isMenuCollapsed = !isMenuCollapsed"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <!-- <button class="btn btn-primary" (click)='getUserInfo()'>get user info</button> -->
-    <a class="navbar-brand" [routerLink]="['home']">{{ 'MENU.BRAND' | translate }} </a>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <a class="navbar-brand" [routerLink]="['home']" (click)="isMenuCollapsed = true">{{ 'MENU.BRAND' | translate }} </a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" [class.show]="!isMenuCollapsed">
         <ul class="navbar-nav">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink"
@@ -14,29 +12,36 @@
                     {{ 'MENU.EVENTS' | translate }}
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" [routerLink]="['even']">{{ 'MENU.EVENTSLIST' | translate }}</a>
-                    <a class="dropdown-item" [routerLink]="['neweven']">{{ 'MENU.EVENTSCREATION' | translate }}</a>
+                    <a class="dropdown-item" [routerLink]="['even']" (click)="isMenuCollapsed = true">{{
+                        'MENU.EVENTSLIST' | translate }}</a>
+                    <a class="dropdown-item" [routerLink]="['neweven']" (click)="isMenuCollapsed = true">{{
+                        'MENU.EVENTSCREATION' | translate }}</a>
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" [routerLink]="['results']">{{ 'MENU.RESULTS' | translate }}</a>
+                <a class="nav-link" [routerLink]="['results']" (click)="isMenuCollapsed = true">{{ 'MENU.RESULTS' |
+                    translate }}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" [routerLink]="['links']">{{ 'MENU.LINKS' | translate }}</a>
+                <a class="nav-link" [routerLink]="['links']" (click)="isMenuCollapsed = true">{{ 'MENU.LINKS' |
+                    translate }}</a>
             </li>
             <li class="nav-item" [hidden]="!isAuthenticated()">
-                <a class="nav-link" (click)="open(uploadfilecontent)">{{ "UPLOADFILE.MENU" | translate }}</a>
+                <a class="nav-link" (click)="open(uploadfilecontent)" (click)="isMenuCollapsed = true">{{
+                    "UPLOADFILE.MENU" | translate }}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" [routerLink]="['maps']">{{ 'MENU.MAPS' | translate }}</a>
+                <a class="nav-link" [routerLink]="['maps']" (click)="isMenuCollapsed = true">{{ 'MENU.MAPS' | translate
+                    }}</a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item" [hidden]="!isAuthenticated()">
-                <a class="nav-link" (click)="open(usercontent)">{{ user.userName }}</a>
+                <a class="nav-link" (click)="open(usercontent)" (click)="isMenuCollapsed = true">{{ user.userName }}</a>
             </li>
             <li class="nav-item" [hidden]="!isAuthenticated()">
-                <a class="nav-link" (click)="logout()">{{ 'MENU.LOGOUT' | translate }}</a>
+                <a class="nav-link" (click)="logout()" (click)="isMenuCollapsed = true">{{ 'MENU.LOGOUT' | translate
+                    }}</a>
             </li>
         </ul>
     </div>
@@ -81,25 +86,25 @@
 </ng-template>
 <!-- Modal window for Upload files -->
 <ng-template #uploadfilecontent let-c="close" let-d="dismiss">
-    <div class="modal-header">
-        <h5 class="modal-title"><b>{{"UPLOADFILE.TITLE" | translate}} :</b></h5>
+        <div class="modal-header">
+            <h5 class="modal-title"><b>{{"UPLOADFILE.TITLE" | translate}} :</b></h5>
 
-        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    <div class="modal-body">
-        <ul class="list-group">
-            <form (ngSubmit)="onSubmit()" enctype="multipart/form-data">
-                <input type="file" name="files" multiple (change)="onFilesSelected($event)" />
-                <br><br>
-                <button class="btn-primary" type="submit">{{"UPLOADFILE.BUTTONSUBMIT" | translate}}</button>
-                <div  class="upfr">{{resultSaveOndisk}}</div>
-            </form>
-        </ul>
-    </div>
-    <div class="modal-footer">
-        <div><button type="button" class="btn btn-secondary" (click)="c('Close click')">{{"COMMUN.CLOSE" |
-            translate}}</button></div>
-    </div>
+            <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <ul class="list-group">
+                <form (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+                    <input type="file" name="files" multiple (change)="onFilesSelected($event)" />
+                    <br><br>
+                    <button class="btn-primary" type="submit">{{"UPLOADFILE.BUTTONSUBMIT" | translate}}</button>
+                    <div class="upfr">{{resultSaveOndisk}}</div>
+                </form>
+            </ul>
+        </div>
+        <div class="modal-footer">
+            <div><button type="button" class="btn btn-secondary" (click)="c('Close click')">{{"COMMUN.CLOSE" |
+                    translate}}</button></div>
+        </div>
 </ng-template>

@@ -1,11 +1,18 @@
+
+.nav-link:hover {
+    color: red; /* Changer la couleur du texte lorsque survolé */
+    /* Autres styles que vous souhaitez appliquer */
+}
+
 .pat-div {
-    margin-bottom: 75px;
+    margin-bottom: 70px;
+    margin-top: 0px;
 }
 
 .pat-lang-selector {
     position: fixed;
     right: 0px;
-    top: 70px;
+    top: 80px;
     z-index: 10;
 }
 
@@ -21,7 +28,7 @@
 }
 
 .navbar-nav .nav-item .nav-link:hover {
-    color: red; /* Couleur que vous souhaitez appliquer lorsque la souris passe dessus */
+    color: red; 
     background-color: yellow;
     font-weight: bold;
 }

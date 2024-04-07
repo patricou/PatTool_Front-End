@@ -16,7 +16,7 @@
         "CITATION": "patrickdeschamps.com",
         "AUTHOR": "Patrick DESCHAMPS",
         "HOMETITLE": "Private Site",
-        "HOMESUBTITLE": "© Patrick Deschamps",
+        "HOMESUBTITLE": "©PatrickDeschamps",
         "SECTION2TITLE": " home-page, section 2 (en).",
         "SECTION3TITLE": " home-page, section 3 (en)."
     },    
@@ -91,7 +91,12 @@
         "TYPE.TRAVEL": "Travel",        
         "ISSUE": "Issue",
         "ISSUEDETAIL": "Issue when save the evenement :",
-        "ISSUEDELDETAIL": "Issue when deleting the evenement :"
+        "ISSUEDELDETAIL": "Issue when deleting the evenement :",
+        "VISIBILITY":"Visibilty",
+        "PUBLIC":"Public",
+        "PRIVATE":"Private",
+        "VISIBILITYERR":"Visibilty Error",
+        "VISIBILITYPLHD":"Visibility Scope"
     },
     "EVENTUPDT": {
         "TITLE": "Activity Update",

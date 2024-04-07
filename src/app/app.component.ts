@@ -18,6 +18,7 @@ export class AppComponent implements OnInit {
     public user: Member;
     private selectedFiles: File[];
     private resultSaveOndisk: string;
+    public isMenuCollapsed = true;
 
     constructor(public _translate: TranslateService,
         public _kc: KeycloakService,

@@ -2,18 +2,28 @@
     <form #f="ngForm" novalidate autocomplete="false" (ngSubmit)=" f.valid && updateEvenement(f.value, f.valid) " class="form-horizontal">
         <fieldset>
             <!-- Form Name -->
-            <h2 class="d-inline">{{ "EVENTUPDT.TITLE" | translate }}</h2>
-            <small><i>Ref : {{evenement.id}}</i></small>
-            <!-- Text input
+            <h2 class="d-inline">{{ "EVENTUPDT.TITLE" | translate }} :</h2><br>
+            <small><i>Ref : {{evenement.id}}</i></small><br>   
             <div class="form-group row">
                 <label class="col-md-4 col-form-label" for="authorLastName">{{ "EVENTCREATION.EVENTAUTHORNAME" | translate }}</label>
-                <div class="col-md-6">
+                <small class="col-md-6">
                     <input id="authorLastName" readonly [(ngModel)]="author" name="author" type="text" class="form-control" required>
-                    <small><i>user.id : {{user.id}}</i></small>
+                </small>
+            </div>           
+            <!-- Visibility Text input-->
+            <div class="form-group row pat-color font-weight-bold" [class.has-danger]="visibility.invalid && f.submitted">
+                <label class="col-md-4 col-form-label" for="visibility">{{ "EVENTCREATION.VISIBILITY" | translate }}</label>
+                <div class="col-md-6">
+                    <select id="visibility" [style.color]="typeColor" #visibility="ngModel" [(ngModel)]="evenement.visibility" name="visibility" class="form-control" required>
+                        <option value="" disabled selected style="color:#dcdcdc;">{{"EVENTCREATION.VISIBILITYPLHD" | translate }}</option>
+                        <option value="public" style="color:black">{{"EVENTCREATION.PUBLIC" | translate }}</option>
+                        <option value="private" style="color:black">{{"EVENTCREATION.PRIVATE" | translate }}</option>                          
+                    </select>
+                    <small class="text-danger" [hidden]="!visibility.invalid || !f.submitted" type="danger">{{ "EVENTCREATION.VISIBILITYERR" | translate }}</small>
                 </div>
-            </div> -->
+            </div>           
             <!-- Text input-->
-            <div class="form-group mt-5 row" [class.has-danger]="EvenementName.invalid && f.submitted">
+            <div class="form-group row" [class.has-danger]="EvenementName.invalid && f.submitted">
                 <label class="col-md-4 col-form-label" for="EvenementName">{{ "EVENTCREATION.EVENTNAME" | translate }}</label>
                 <div class="col-md-6">
                     <input id="EvenementName" #EvenementName="ngModel" [(ngModel)]="evenement.evenementName" name="EvenementName" type="text" placeholder="{{ 'EVENTCREATION.EVENTNAMEPLHD' | translate }}" class="form-control input-md" required>

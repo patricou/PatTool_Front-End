@@ -228,20 +228,23 @@ export class ElementEvenementComponent implements OnInit, AfterViewInit {
 			return `with: ${reason}`;
 		}
 	}
-	// Live Chat functions ( with Firebase ) 
-	public Send(desc: string) {
-		this.items.push({
-			'message': desc,
-			'date': firebase.database.ServerValue.TIMESTAMP,
-			'user': {
-				firstName: this.user.firstName,
-				lastName: this.user.lastName,
-				userName: this.user.userName
-			},
-			'priority': 0 - Date.now()
-		});
-		this.msgVal = '';
+
+	Send() 
+	{     
+	  this.items.push({
+		'message': this.msgVal,
+		'date': firebase.database.ServerValue.TIMESTAMP,
+		'user': {
+		  firstName: this.user.firstName,
+		  lastName: this.user.lastName,
+		  userName: this.user.userName
+		},
+		'priority': 0 - Date.now()
+	  });
+	  this.msgVal = '';
 	}
+
+
 	public deleteMessage(item) {
 		this.items.remove(item.$key);
 	}
@@ -274,8 +277,8 @@ export class ElementEvenementComponent implements OnInit, AfterViewInit {
 		this.getFileBlobUrl(fileId).subscribe(blob => {
 			console.log('blob type : ' + blob.type + " // blob.size : " + blob.size);
 			//IE11 & Edge
-			if (navigator.msSaveBlob) {
-				navigator.msSaveBlob(blob, fileName);
+			if ((navigator as any).msSaveBlob) {
+				(navigator as any).msSaveBlob(blob, fileName);
 			} else {
 				let natw = this.nativeWindow;
 				//In FF link must be added to DOM to be clicked

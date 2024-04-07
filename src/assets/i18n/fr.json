@@ -16,7 +16,7 @@
         "CITATION": "patrickdeschamps.com",
         "AUTHOR": "Patrick DESCHAMPS",
         "HOMETITLE": "Site Privé",
-        "HOMESUBTITLE":  "© PatrickDeschamps",
+        "HOMESUBTITLE":  "©PatrickDeschamps",
         "SECTION2TITLE": " home-page, section 2 (fr).",
         "SECTION3TITLE": " home-page, section 3 (fr)."
     },
@@ -91,7 +91,12 @@
         "TYPE.TRAVEL": "Voyage",
         "ISSUE": "Probleme",
         "ISSUEDETAIL": "Probléme en voulant enregistrer l'Activité : ",
-        "ISSUEDELDETAIL": "Probléme en voulant supprimer l'Activité : "
+        "ISSUEDELDETAIL": "Probléme en voulant supprimer l'Activité : ",
+        "VISIBILITY":"Visibilité",
+        "PUBLIC":"Public",
+        "PRIVATE":"Pirvée",
+        "VISIBILITYERR":"Erreur dans la Visibilté",
+        "VISIBILITYPLHD":"Scope de la visibilité"
     },
     "EVENTUPDT": {
         "TITLE": "Modification de l'Activité",
@@ -147,7 +152,7 @@
         "IDONTLIKE": "Je n'aime pas"
     },
     "RESULTS": {
-        "TITLE": "Dicussion Globale en temps réel",
+        "TITLE": "Dicussion Génèrale",
         "MESSAGEPLHD": "Entrez un Message ou Commentaire ici .... ",
         "SEND": "Envoyez"
     },
