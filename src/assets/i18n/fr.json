@@ -22,7 +22,8 @@
     },
     "LINKS":{
         "TITLE":"Liens preferés",
-        "REF":"..."
+        "REF":"...",
+        "COMMENT":"Box cochées sont public"
     },
     "EVENTHOME": {
         "EVENTSLIST": "Liste des Activités :",

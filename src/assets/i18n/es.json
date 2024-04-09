@@ -22,7 +22,8 @@
     },    
     "LINKS":{
         "TITLE": "Prefered URLS",
-        "REF":"..."
+        "REF":"...",
+        "COMMENT":"Checked box are public"
     },
     "EVENTHOME": {
         "EVENTSLIST": "Activities List :",

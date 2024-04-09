@@ -1,3 +1,4 @@
+import { Member } from "./member";
 
 export class urllink{
     constructor(        
@@ -6,6 +7,8 @@ export class urllink{
         public linkDescription:String,
         public linkName:String,
         public url:String,
-        public categoryLinkID:Number
+        public categoryLinkID:Number,
+        public visibility:string,
+        public author:Member
         ){}
 }

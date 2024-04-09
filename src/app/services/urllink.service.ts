@@ -11,7 +11,7 @@ import { Category } from 'app/model/Category';
 @Injectable()
 export class UrllinkService {
 
-  private API_URL: string = environment.API_URL;
+	private API_URL: string = environment.API_URL;
 
 	constructor(private _http: Http, private _keycloakService: KeycloakService) {
 	}
@@ -29,7 +29,7 @@ export class UrllinkService {
 		})
 	}
 
-    getLinks(): Observable<any> {
+	getLinks(): Observable<any> {
 		return this.getHeaderWithToken().concatMap(headers =>
 			this._http.get(this.API_URL + "urllink/", { headers: headers })
 				.map(res => res.json()))
@@ -39,6 +39,13 @@ export class UrllinkService {
 		return this.getHeaderWithToken().concatMap(headers =>
 			this._http.get(this.API_URL + "categories/", { headers: headers })
 				.map(res => res.json()))
+	}
+
+	// PUT
+	updateVisibility(urllink: urllink): Observable<Response> {
+		return this.getHeaderWithToken().concatMap(headers =>
+			this._http.put(this.API_URL + 'visibility/', JSON.stringify(urllink), { headers: headers })
+		)
 	}
 
 }
