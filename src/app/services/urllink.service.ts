@@ -7,6 +7,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
 import { urllink } from 'app/model/urllink';
 import { Category } from 'app/model/Category';
+import { Member } from 'app/model/member';
 
 @Injectable()
 export class UrllinkService {
@@ -29,9 +30,9 @@ export class UrllinkService {
 		})
 	}
 
-	getLinks(): Observable<any> {
+	getLinks(user:Member): Observable<any> {
 		return this.getHeaderWithToken().concatMap(headers =>
-			this._http.get(this.API_URL + "urllink/", { headers: headers })
+			this._http.get(this.API_URL + "urllink/"+user.id, { headers: headers })
 				.map(res => res.json()))
 	}
 

@@ -3,7 +3,8 @@
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" [routerLink]="['home']" (click)="isMenuCollapsed = true">{{ 'MENU.BRAND' | translate }} </a>
+    <a class="navbar-brand" [routerLink]="['home']" (click)="isMenuCollapsed = true">{{ 'MENU.BRAND' | translate }}
+    </a>
     <div class="collapse navbar-collapse" id="navbarSupportedContent" [class.show]="!isMenuCollapsed">
         <ul class="navbar-nav">
             <li class="nav-item dropdown">
@@ -86,25 +87,25 @@
 </ng-template>
 <!-- Modal window for Upload files -->
 <ng-template #uploadfilecontent let-c="close" let-d="dismiss">
-        <div class="modal-header">
-            <h5 class="modal-title"><b>{{"UPLOADFILE.TITLE" | translate}} :</b></h5>
+    <div class="modal-header">
+        <h5 class="modal-title"><b>{{"UPLOADFILE.TITLE" | translate}} :</b></h5>
 
-            <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div class="modal-body">
-            <ul class="list-group">
-                <form (ngSubmit)="onSubmit()" enctype="multipart/form-data">
-                    <input type="file" name="files" multiple (change)="onFilesSelected($event)" />
-                    <br><br>
-                    <button class="btn-primary" type="submit">{{"UPLOADFILE.BUTTONSUBMIT" | translate}}</button>
-                    <div class="upfr">{{resultSaveOndisk}}</div>
-                </form>
-            </ul>
-        </div>
-        <div class="modal-footer">
-            <div><button type="button" class="btn btn-secondary" (click)="c('Close click')">{{"COMMUN.CLOSE" |
-                    translate}}</button></div>
-        </div>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <ul class="list-group">
+            <form (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+                <input type="file" name="files" multiple (change)="onFilesSelected($event)" />
+                <br><br>
+                <button class="btn-primary" type="submit">{{"UPLOADFILE.BUTTONSUBMIT" | translate}}</button>
+                <div class="upfr">{{resultSaveOndisk}}</div>
+            </form>
+        </ul>
+    </div>
+    <div class="modal-footer">
+        <div><button type="button" class="btn btn-secondary" (click)="c('Close click')">{{"COMMUN.CLOSE" |
+                translate}}</button></div>
+    </div>
 </ng-template>

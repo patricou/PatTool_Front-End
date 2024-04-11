@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { Member } from 'app/model/member';
 
 @Injectable()
 export class CommonvaluesService {
 
     private pageNumber: number = 0;
     private dataFilter: string = "";
-    private elementsByPage: number = 6;
+    private elementsByPage: number = 9;
     private lang: string;
 
     constructor(private _translate: TranslateService) {
@@ -47,5 +48,6 @@ export class CommonvaluesService {
     getLang(): string {
         return this.lang;
     };
+
 
 }

@@ -20,14 +20,20 @@ export class LinksComponent implements OnInit {
   constructor(private _memberService: MembersService, private _urlLinkService: UrllinkService, private _commonValuesService: CommonvaluesService) { }
 
   ngOnInit() {
-    // to get urls
-    this._urlLinkService
-      .getLinks()
-      .subscribe(ulks => {
-        //alert(JSON.stringify(ulks));
-        this.urllinks = ulks;
-      }
-        , err => alert("Error getting urllink" + err));
+    // to get urls when user.id is nnot empty
+    this.waitForNonEmptyValue().then(() => {
+      let now = new Date();
+
+      console.log("4|------------------> This.user.id is no more null ( from LinksComponent ):", this.user.id + " at " + now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds() + '.' + now.getMilliseconds());
+
+      this._urlLinkService
+        .getLinks(this.user)
+        .subscribe(ulks => {
+          //alert(JSON.stringify(ulks));
+          this.urllinks = ulks;
+        }
+          , err => alert("Error getting urllink" + err));
+    });
     // to get Categories  
     this._urlLinkService
       .getCategories()
@@ -36,6 +42,21 @@ export class LinksComponent implements OnInit {
       }
         , err => alert("Error getting Category" + err))
   };
+
+  private waitForNonEmptyValue(): Promise<void> {
+    return new Promise<void>((resolve) => {
+      const checkValue = () => {
+        if (this.user.id !== "") {
+          resolve();
+        } else {
+          let now = new Date();
+          console.log("This.user.id is still empty " + now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds() + '.' + now.getMilliseconds());
+          setTimeout(checkValue, 100); // Appeler checkValue de manière récursive après 100ms
+        }
+      };
+      checkValue(); // Déclencher la première vérification
+    });
+  }
 
   submitVisibilityChange(urllink) {
     // Convert the visibility to 'public' or 'private'

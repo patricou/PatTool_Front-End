@@ -99,7 +99,7 @@ export class HomeEvenementsComponent implements OnInit, AfterViewInit {
 		this.waitForNonEmptyValue().then(() => {
 			let now = new Date();
 			
-			console.log("4|------------------> This.user.id is no more null :", this.user.id + " at " +now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds()+'.'+now.getMilliseconds());
+			console.log("4|------------------> This.user.id is no more null ( from HomeEvenementsComponent ) :", this.user.id + " at " +now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds()+'.'+now.getMilliseconds());
 			
 			this._evenementsService
 				.getEvents(searchString, this.pageNumber, this.elementsByPage, this.user.id)

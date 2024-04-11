@@ -46,14 +46,14 @@ export class MembersService {
                 console.log("2|------------------> Just before user POST request : "+now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds()+'.'+now.getMilliseconds());
                 // New code 20240405
                 return this._http.post(this.API_URL + 'memb/user', JSON.stringify(this.user), requestOptions)
-                    .timeout(5000) // Attendre jusqu'à 5 secondes pour une réponse
+                    .timeout(10000) // Attendre jusqu'à 5 secondes pour une réponse
                     .map(res => {
                         let now = new Date();
                         console.log("3|------------------> OK : "+now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds()+'.'+now.getMilliseconds() );
                         return res.json();
                     })
                     .catch(error => {
-                        console.error("Error:", error);
+                        console.error("¦=================> Error:", error);
                         alert("Issue to get the Id of the user : " + error);
                         return Observable.throw(error); // Renvoyer l'erreur pour la propager plus loin
                     });
@@ -61,22 +61,13 @@ export class MembersService {
             })
         } else {
             let now = new Date();
-            console.log("4|------------------> user : "+ JSON.stringify(this.user)+ " : "+now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds()+'.'+now.getMilliseconds() );
+            console.log("4|------------------> user.id was alreday set : "+this.user.id+ " at "+now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds()+'.'+now.getMilliseconds() );
             return Observable.of(this.user);
         }
     };
 
     getUser(): Member {
         return this.user;
-    };
+    }
 
 }
-
-
-//return this._http.post(this.API_URL + 'memb/user', JSON.stringify(this.user), requestOptions)
-//.map(res => {
-//    console.log("3|------------------> " + /*JSON.stringify(res.json())*/ res);
-//    return res.json()
-//},
-//    e => { alert("Issue to get the Id of the user : " + e);
-//})

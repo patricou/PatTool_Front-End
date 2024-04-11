@@ -10,20 +10,20 @@
         "MEMBERS": "Membres",
         "LOGIN": "Connexion",
         "LOGOUT": "Déconnexion",
-        "LINKS":"Liens"
+        "LINKS": "Liens"
     },
     "HOME": {
         "CITATION": "patrickdeschamps.com",
         "AUTHOR": "Patrick DESCHAMPS",
         "HOMETITLE": "Site Privé",
-        "HOMESUBTITLE":  "©PatrickDeschamps",
+        "HOMESUBTITLE": "©PatrickDeschamps",
         "SECTION2TITLE": " home-page, section 2 (fr).",
         "SECTION3TITLE": " home-page, section 3 (fr)."
     },
-    "LINKS":{
-        "TITLE":"Liens preferés",
-        "REF":"...",
-        "COMMENT":"Box cochées sont public"
+    "LINKS": {
+        "TITLE": "Liens preferés",
+        "REF": "...",
+        "COMMENT": "Box cochées sont public"
     },
     "EVENTHOME": {
         "EVENTSLIST": "Liste des Activités :",
@@ -93,11 +93,11 @@
         "ISSUE": "Probleme",
         "ISSUEDETAIL": "Probléme en voulant enregistrer l'Activité : ",
         "ISSUEDELDETAIL": "Probléme en voulant supprimer l'Activité : ",
-        "VISIBILITY":"Visibilité",
-        "PUBLIC":"Public",
-        "PRIVATE":"Pirvée",
-        "VISIBILITYERR":"Erreur dans la Visibilté",
-        "VISIBILITYPLHD":"Scope de la visibilité"
+        "VISIBILITY": "Visibilité",
+        "PUBLIC": "Public",
+        "PRIVATE": "Pirvée",
+        "VISIBILITYERR": "Erreur dans la Visibilté",
+        "VISIBILITYPLHD": "Scope de la visibilité"
     },
     "EVENTUPDT": {
         "TITLE": "Modification de l'Activité",
@@ -158,7 +158,7 @@
         "SEND": "Envoyez"
     },
     "MAP": {
-        "TITLE": "Principales Caractéristiques",
+        "TITLE": "Caractéristiques",
         "FRONTEND": "Coté CLient",
         "BACKEND": "Coté Serveur",
         "DATA": "Donnée",
