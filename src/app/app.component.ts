@@ -19,6 +19,7 @@ export class AppComponent implements OnInit {
     private selectedFiles: File[];
     private resultSaveOndisk: string;
     public isMenuCollapsed = true;
+    public isLoading; boolean = false;
 
     constructor(public _translate: TranslateService,
         public _kc: KeycloakService,
@@ -61,9 +62,9 @@ export class AppComponent implements OnInit {
         //this.user = this._membersService.getUser();
         // the folowing add the user.id and return it through an Observanle
         let now = new Date();
-        console.log("0/1|------------------> UserId from AppComponent : "+now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds()+'.'+now.getMilliseconds());
+        console.log("0/1|------------------> UserId from AppComponent : " + now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds() + '.' + now.getMilliseconds());
         this._membersService.getUserId().subscribe(member => {
-            console.log("1/1|------------------> UserId from AppComponent ok : user.is :  "+ member.id + " / "+now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds()+'.'+now.getMilliseconds());
+            console.log("1/1|------------------> UserId from AppComponent ok : user.is :  " + member.id + " / " + now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds() + '.' + now.getMilliseconds());
             this.user.id = member.id;
             // reset the user in the service ( with id ) otherwyse it is not present ( which is strange )
             this._membersService.setUser(this.user);
@@ -75,7 +76,7 @@ export class AppComponent implements OnInit {
     public closeResult: string;
 
     public open(content) {
-        this.resultSaveOndisk="";
+        this.resultSaveOndisk = "";
 
         this.modalService.open(content).result.then((result) => {
             this.closeResult = `Closed with: ${result}`;
@@ -95,11 +96,15 @@ export class AppComponent implements OnInit {
     }
 
     onFilesSelected(event) {
-        this.resultSaveOndisk="";
+        this.resultSaveOndisk = "";
         this.selectedFiles = event.target.files;
     }
 
     onSubmit() {
+
+        this.isLoading = true;
+        this.resultSaveOndisk = ""
+
 
         if (this.selectedFiles.length === 0) {
             console.log('Aucun fichier sélectionné.');
@@ -108,7 +113,7 @@ export class AppComponent implements OnInit {
 
         const formData = new FormData();
         for (let file of this.selectedFiles) {
-            console.log(JSON.stringify("file : " + file + " / file.name : " + file.name+ " / User : " + this.user.firstName +" "+this.user.lastName));
+            console.log(JSON.stringify("file : " + file + " / file.name : " + file.name + " / User : " + this.user.firstName + " " + this.user.lastName));
             formData.append('files', file, file.name);
         }
 
@@ -117,11 +122,12 @@ export class AppComponent implements OnInit {
             .subscribe(
                 (response) => {
                     //console.log('|--> Upload successful : ' + response);
+                    this.isLoading = false;
                     this.resultSaveOndisk = "Upload OK.         ";
                 },
                 (error) => {
                     console.error('|--> Upload error : ' + error);
-                    this.resultSaveOndisk =  "Issue to Upload File(s).      ";                  
+                    this.resultSaveOndisk = "Issue to Upload File(s).      ";
                 }
             );
     }

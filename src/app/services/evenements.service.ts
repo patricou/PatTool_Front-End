@@ -1,13 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, Response } from '@angular/http';
-
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
-
 import { Evenement } from '../model/evenement';
-import { Member } from '../model/member';
-import { UploadedFile } from '../model/uploadedfile';
 import { environment } from '../../environments/environment';
 import { KeycloakService } from '../keycloak/keycloak.service';
 
@@ -27,15 +23,15 @@ export class EvenementsService {
 		return tokenObservable1.map(token => {
 			return new Headers({
 				'Accept': 'application/json',
-				'content-type': 'application/json',				
+				'content-type': 'application/json',
 				'Authorization': 'Bearer ' + token
 			})
 		})
 	}
 	// GET + %name%
-	getEvents(name: string, pageNumber: number, elementsByPage: number,userId:string): Observable<any> {
+	getEvents(name: string, pageNumber: number, elementsByPage: number, userId: string): Observable<any> {
 		return this.getHeaderWithToken().concatMap(headers =>
-			this._http.get(this.API_URL + "even/" + name + "/" + pageNumber + "/" + elementsByPage+"/"+userId, { headers: headers })
+			this._http.get(this.API_URL + "even/" + name + "/" + pageNumber + "/" + elementsByPage + "/" + userId, { headers: headers })
 				.map(res => res.json()))
 	}
 

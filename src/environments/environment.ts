@@ -14,8 +14,9 @@ export const environment = {
     //API_URL4FILEONDISK: "/uploadondisk/",
     //dev
     keykloakBaseUrl: 'http://localhost:8080/auth',
-    serviceBaseUrl: 'http://localhost:8080/database',    
+    serviceBaseUrl: 'http://localhost:8080/database',
     API_URL: "http://localhost:8000/api/",
+    URL4PATGPT: "http://localhost:8000/",
     API_URL4FILE: "http://localhost:8000/uploadfile/",
     API_URL4FILEONDISK: "http://localhost:8000/uploadondisk/",
     //fire base config

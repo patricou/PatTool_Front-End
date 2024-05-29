@@ -27,6 +27,21 @@
                 <a class="nav-link" [routerLink]="['links']" (click)="isMenuCollapsed = true">{{ 'MENU.LINKS' |
                     translate }}</a>
             </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink2"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{ 'MENU.IA' | translate }}
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
+                    <a class="dropdown-item" [routerLink]="['patgpt']" (click)="isMenuCollapsed = true">{{
+                        'MENU.PATGPT' | translate }}</a>
+                    <a class="dropdown-item" (click)="isMenuCollapsed = true" href="https://chatgpt.com/?oai-dm=1"
+                        target="_blank">ChatGPT
+                    </a>
+                </div>
+            </li>
+
             <li class="nav-item" [hidden]="!isAuthenticated()">
                 <a class="nav-link" (click)="open(uploadfilecontent)" (click)="isMenuCollapsed = true">{{
                     "UPLOADFILE.MENU" | translate }}</a>
@@ -99,7 +114,14 @@
             <form (ngSubmit)="onSubmit()" enctype="multipart/form-data">
                 <input type="file" name="files" multiple (change)="onFilesSelected($event)" />
                 <br><br>
-                <button class="btn-primary" type="submit">{{"UPLOADFILE.BUTTONSUBMIT" | translate}}</button>
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: center;">
+                    <button class="btn-primary" type="submit">{{"UPLOADFILE.BUTTONSUBMIT" | translate}}</button>
+                    <div *ngIf="isLoading" style="display: flex; justify-content: center;">
+                        <img src="assets/images/sablier.gif" />
+                    </div>
+                    <div style="flex: 1;"></div>
+                </div>
+                <br>
                 <div class="upfr">{{resultSaveOndisk}}</div>
             </form>
         </ul>

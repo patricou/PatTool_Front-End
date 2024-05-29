@@ -1,6 +1,6 @@
-
 .nav-link:hover {
-    color: red; /* Changer la couleur du texte lorsque survolé */
+    color: red;
+    /* Changer la couleur du texte lorsque survolé */
     /* Autres styles que vous souhaitez appliquer */
 }
 
@@ -28,7 +28,7 @@
 }
 
 .navbar-nav .nav-item .nav-link:hover {
-    color: red; 
+    color: red;
     background-color: yellow;
     font-weight: bold;
 }

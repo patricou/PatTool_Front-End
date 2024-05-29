@@ -10,7 +10,9 @@
         "MEMBERS": "Membres",
         "LOGIN": "Connexion",
         "LOGOUT": "Déconnexion",
-        "LINKS": "Liens"
+        "LINKS": "Liens",
+        "IA": "IA",
+        "PATGPT": "PatGPT"
     },
     "HOME": {
         "CITATION": "patrickdeschamps.com",
@@ -178,5 +180,17 @@
         "MENU": "Télécharger",
         "BUTTONSUBMIT": "Envoyer",
         "TITLE": "Choisir des Fichiers"
+    },
+    "PATGPT": {
+        "TITLE": "PatGPT",
+        "PLACEHOLDER": "Tapez votre message ici...",
+        "BUTTONSEND": "Envoyez",
+        "RESPONSE": "Réponse",
+        "BILLING": "Facturation",
+        "CLEAR": "Effacer",
+        "HISTORICAL": "Historique",
+        "CLEARHISTORICAL": "Effacer l'Historique",
+        "SENDWITHHISTORICAL": "Envoyez avec l'historique",
+        "SENDWITHOUTHISTORICAL": "Envoyez sans l'historique"
     }
 }

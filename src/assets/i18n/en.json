@@ -10,7 +10,9 @@
         "MEMBERS": "Members",
         "LOGIN": "Login",
         "LOGOUT": "Logout",
-        "LINKS":"Urls"
+        "LINKS": "Urls",
+        "IA": "IA",
+        "PATGPT": "PatGPT"
     },
     "HOME": {
         "CITATION": "patrickdeschamps.com",
@@ -19,11 +21,11 @@
         "HOMESUBTITLE": "©PatrickDeschamps",
         "SECTION2TITLE": " home-page, section 2 (en).",
         "SECTION3TITLE": " home-page, section 3 (en)."
-    },    
-    "LINKS":{
+    },
+    "LINKS": {
         "TITLE": "Prefered URLS",
-        "REF":"...",
-        "COMMENT":"Checked box are public"
+        "REF": "...",
+        "COMMENT": "Checked box are public"
     },
     "EVENTHOME": {
         "EVENTSLIST": "Activities List :",
@@ -89,15 +91,15 @@
         "TYPE.BIKE": "Bike",
         "TYPE.PARTY": "Party",
         "TYPE.VACATION": "Vacation",
-        "TYPE.TRAVEL": "Travel",        
+        "TYPE.TRAVEL": "Travel",
         "ISSUE": "Issue",
         "ISSUEDETAIL": "Issue when save the evenement :",
         "ISSUEDELDETAIL": "Issue when deleting the evenement :",
-        "VISIBILITY":"Visibilty",
-        "PUBLIC":"Public",
-        "PRIVATE":"Private",
-        "VISIBILITYERR":"Visibilty Error",
-        "VISIBILITYPLHD":"Visibility Scope"
+        "VISIBILITY": "Visibilty",
+        "PUBLIC": "Public",
+        "PRIVATE": "Private",
+        "VISIBILITYERR": "Visibilty Error",
+        "VISIBILITYPLHD": "Visibility Scope"
     },
     "EVENTUPDT": {
         "TITLE": "Activity Update",
@@ -178,5 +180,17 @@
         "MENU": "Upload",
         "BUTTONSUBMIT": "Submit",
         "TITLE": "Chose Files"
+    },
+    "PATGPT": {
+        "TITLE": "PatGPT",
+        "PLACEHOLDER": "Enter your message here",
+        "BUTTONSEND": "Send",
+        "RESPONSE": "Response",
+        "BILLING": "Billing",
+        "CLEAR": "Clear",
+        "HISTORICAL": "Historical",
+        "CLEARHISTORICAL": "Clear Historical",
+        "SENDWITHHISTORICAL": "Send with historical",
+        "SENDWITHOUTHISTORICAL": "Send without historical"
     }
 }
