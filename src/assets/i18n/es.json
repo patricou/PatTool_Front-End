@@ -93,6 +93,7 @@
         "TYPE.VACATION": "Vacaciones",
         "TYPE.TRAVEL": "Viaje",
         "ISSUE": "Problema",
+        "TYPE.RANDO": "Excursionismo",
         "ISSUEDETAIL": "Problema al guardar el evento:",
         "ISSUEDELDETAIL": "Problema al eliminar el evento:",
         "VISIBILITY": "Visibilidad",
@@ -189,8 +190,10 @@
         "BILLING": "Facturación",
         "CLEAR": "Borrar",
         "HISTORICAL": "Histórico",
-        "CLEARHISTORICAL": "Borrar Histórico",
+        "CLEARHISTORICAL": "Nueva discusión",
         "SENDWITHHISTORICAL": "Enviar con histórico",
-        "SENDWITHOUTHISTORICAL": "Enviar sin histórico"
+        "SENDWITHOUTHISTORICAL": "Enviar sin histórico",
+        "WITHLASTXQUESTION": "con las últimas X preguntas",
+        "WITHLASTFIRSTQUESTION": "con las primeras X preguntas"
     }
 }

@@ -39,6 +39,10 @@
         <span *ngSwitchCase="3">{{"EVENTCREATION.TYPE.RUN" | translate }}</span>
         <span *ngSwitchCase="4">{{"EVENTCREATION.TYPE.WALK" | translate }}</span>
         <span *ngSwitchCase="5">{{"EVENTCREATION.TYPE.BIKE" | translate }}</span>
+        <span *ngSwitchCase="6">{{"EVENTCREATION.TYPE.PARTY" | translate }}</span>
+        <span *ngSwitchCase="7">{{"EVENTCREATION.TYPE.VACATION" | translate }}</span>
+        <span *ngSwitchCase="8">{{"EVENTCREATION.TYPE.TRAVEL" | translate }}</span>
+        <span *ngSwitchCase="9">{{"EVENTCREATION.TYPE.RANDO" | translate }}</span>
     </div>
     <div class="card-text" [ngSwitch]="evenement.diffculty">
         {{"EVENTELEM.DIFF" | translate }} :
@@ -58,9 +62,11 @@
     <div class="card-text">
         {{"EVENTELEM.ENDDT" | translate }} : {{evenement.endEventDate | date }}
     </div>
+    <!--    
     <div class="card-text">
         {{"EVENTELEM.DURATION" | translate }} : {{evenement.durationEstimation }}
     </div>
+    -->
     <div [hidden]="tfl">
         <div class="card-text">
             <hr>
@@ -132,8 +138,8 @@
     </div>
     <div class="modal-body">
         <div class="input-group">
-            <input [(ngModel)]="msgVal" type="textarea" id="message" placeholder="{{ 'RESULTS.MESSAGEPLHD' | translate }}"
-                (keyup.enter)="Send()" autofocus />
+            <input [(ngModel)]="msgVal" type="textarea" id="message"
+                placeholder="{{ 'RESULTS.MESSAGEPLHD' | translate }}" (keyup.enter)="Send()" autofocus />
             <div class="input-group-append">
                 <button class="btn btn-primary" type="button" (click)="Send()">{{ 'RESULTS.SEND' | translate }}</button>
             </div>

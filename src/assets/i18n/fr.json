@@ -92,6 +92,7 @@
         "TYPE.PARTY": "Fête",
         "TYPE.VACATION": "Vacances",
         "TYPE.TRAVEL": "Voyage",
+        "TYPE.RANDO": "Randonnée",
         "ISSUE": "Probleme",
         "ISSUEDETAIL": "Probléme en voulant enregistrer l'Activité : ",
         "ISSUEDELDETAIL": "Probléme en voulant supprimer l'Activité : ",
@@ -183,14 +184,16 @@
     },
     "PATGPT": {
         "TITLE": "PatGPT",
-        "PLACEHOLDER": "Tapez votre message ici...",
+        "PLACEHOLDER": "Tapez votre question ici...",
         "BUTTONSEND": "Envoyez",
         "RESPONSE": "Réponse",
         "BILLING": "Facturation",
         "CLEAR": "Effacer",
         "HISTORICAL": "Historique",
-        "CLEARHISTORICAL": "Effacer l'Historique",
+        "CLEARHISTORICAL": "Nouvelle discussion",
         "SENDWITHHISTORICAL": "Envoyez avec l'historique",
-        "SENDWITHOUTHISTORICAL": "Envoyez sans l'historique"
+        "SENDWITHOUTHISTORICAL": "Envoyez sans l'historique",
+        "WITHLASTXQUESTION": "X dernières questions",
+        "WITHLASTFIRSTQUESTION": "X premières questions"
     }
 }

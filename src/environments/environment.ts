@@ -29,5 +29,5 @@ export const environment = {
         messagingSenderId: "193416492629"
     },
     // Langages for the translator
-    langs: ["en", "fr", "es"]
+    langs: ["ar", "cn", "de", "el", "en", "es", "fr", "he", "it", "jp", "ru"]
 };

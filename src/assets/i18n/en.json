@@ -93,6 +93,7 @@
         "TYPE.VACATION": "Vacation",
         "TYPE.TRAVEL": "Travel",
         "ISSUE": "Issue",
+        "TYPE.RANDO": "Hiking",
         "ISSUEDETAIL": "Issue when save the evenement :",
         "ISSUEDELDETAIL": "Issue when deleting the evenement :",
         "VISIBILITY": "Visibilty",
@@ -183,14 +184,16 @@
     },
     "PATGPT": {
         "TITLE": "PatGPT",
-        "PLACEHOLDER": "Enter your message here",
+        "PLACEHOLDER": "Enter your question here",
         "BUTTONSEND": "Send",
         "RESPONSE": "Response",
         "BILLING": "Billing",
         "CLEAR": "Clear",
         "HISTORICAL": "Historical",
-        "CLEARHISTORICAL": "Clear Historical",
+        "CLEARHISTORICAL": "New discussion",
         "SENDWITHHISTORICAL": "Send with historical",
-        "SENDWITHOUTHISTORICAL": "Send without historical"
+        "SENDWITHOUTHISTORICAL": "Send without historical",
+        "WITHLASTXQUESTION": "with Last X questions",
+        "WITHLASTFIRSTQUESTION": "with last first questions"
     }
 }

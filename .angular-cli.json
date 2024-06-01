@@ -3,42 +3,45 @@
     "project": {
         "name": "PatTool_Front-End"
     },
-    "apps": [{
-        "root": "src",
-        "outDir": "C:/Dev/IdeaProjects/PatTool_Back-End/src/main/resources/static",
-        "assets": [
-            "assets",
-            "favicon.ico"
-        ],
-        "index": "index.html",
-        "main": "main.ts",
-        "polyfills": "polyfills.ts",
-        "test": "test.ts",
-        "tsconfig": "tsconfig.app.json",
-        "testTsconfig": "tsconfig.spec.json",
-        "prefix": "app",
-        "styles": [
-            "../node_modules/bootstrap/dist/css/bootstrap.min.css",
-            "styles.css"
-        ],
-        "scripts": [
-            "../node_modules/jquery/dist/jquery.js",
-            "../node_modules/tether/dist/js/tether.js",
-            "../node_modules/bootstrap/dist/js/bootstrap.js",
-            "app/js/keycloak.js"
-        ],
-        "environmentSource": "environments/environment.ts",
-        "environments": {
-            "dev": "environments/environment.ts",
-            "prod": "environments/environment.prod.ts"
+    "apps": [
+        {
+            "root": "src",
+            "outDir": "C:/Dev/IdeaProjects/PatTool_Back-End/src/main/resources/static",
+            "assets": [
+                "assets",
+                "favicon.ico"
+            ],
+            "index": "index.html",
+            "main": "main.ts",
+            "polyfills": "polyfills.ts",
+            "test": "test.ts",
+            "tsconfig": "tsconfig.app.json",
+            "testTsconfig": "tsconfig.spec.json",
+            "prefix": "app",
+            "styles": [
+                "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+                "styles.css"
+            ],
+            "scripts": [
+                "../node_modules/jquery/dist/jquery.js",
+                "../node_modules/tether/dist/js/tether.js",
+                "../node_modules/bootstrap/dist/js/bootstrap.js",
+                "app/js/keycloak.js"
+            ],
+            "environmentSource": "environments/environment.ts",
+            "environments": {
+                "dev": "environments/environment.ts",
+                "prod": "environments/environment.prod.ts"
+            }
         }
-    }],
+    ],
     "e2e": {
         "protractor": {
             "config": "./protractor.conf.js"
         }
     },
-    "lint": [{
+    "lint": [
+        {
             "project": "src/tsconfig.app.json"
         },
         {

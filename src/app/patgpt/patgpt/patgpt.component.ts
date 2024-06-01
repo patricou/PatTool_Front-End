@@ -15,7 +15,8 @@ export class PatgptComponent implements OnInit {
   currentDate: Date = new Date();
   private intervalId: any;
   private URL4PATGPT: string = environment.URL4PATGPT;
-  sendWithHistorical: boolean = false;
+  sendWithHistorical: boolean = true;
+  lastxquestion: boolean = true;
   public isLoading; boolean = false;
 
   constructor(private patgptService: PatgptService) { }
@@ -28,7 +29,8 @@ export class PatgptComponent implements OnInit {
 
   sendQuestion() {
     this.isLoading = true;
-    this.patgptService.getPatGptResponse(this.userInput, this.sendWithHistorical).subscribe(response => {
+    this.chatResponse = null;
+    this.patgptService.getPatGptResponse(this.userInput, this.sendWithHistorical, this.lastxquestion).subscribe(response => {
       this.isLoading = false;
       this.chatResponse = response;
     });
@@ -47,10 +49,10 @@ export class PatgptComponent implements OnInit {
   }
 
   clearHistorical(): void {
-    const response = confirm("Sure you want to delete historical ? ");
+    const response = confirm("New discussion ? ( You are going to delete the historical ).");
     if (response) {
       this.patgptService.delPatGptHistorical().subscribe(response => {
-        alert("All Historical Deleted");
+
       });
     }
   }

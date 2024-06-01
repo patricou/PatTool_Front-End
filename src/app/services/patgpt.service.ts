@@ -25,12 +25,12 @@ export class PatgptService {
     })
   }
 
-  getPatGptResponse(question: string, sendWithHistorical: boolean): Observable<any> {
+  getPatGptResponse(question: string, sendWithHistorical: boolean, lastxquestion: boolean): Observable<any> {
 
     const requestBody = { userInput: question };
 
     return this.getHeaderWithToken().concatMap(headers =>
-      this._http.post(this.API_URL + "chat/" + sendWithHistorical, JSON.stringify(requestBody), { headers: headers })
+      this._http.post(this.API_URL + "chat/" + sendWithHistorical + "/" + lastxquestion, JSON.stringify(requestBody), { headers: headers })
         .map((response: Response) => new ChatResponse(response.json())));
   }
 

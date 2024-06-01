@@ -34,7 +34,7 @@ export class AppComponent implements OnInit {
         this.getUserInfo();
         // init translator
         this._translate.addLangs(environment.langs);
-        this._translate.setDefaultLang('en');
+        this._translate.setDefaultLang('fr');
         // set the lang stored in the commnValue service
         this._translate.use(this._commonValuesServices.getLang());
         // catch in all modules when lang is changed
