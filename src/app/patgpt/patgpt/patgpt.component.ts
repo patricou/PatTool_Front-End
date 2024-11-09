@@ -49,6 +49,8 @@ export class PatgptComponent implements OnInit {
   }
 
   clearHistorical(): void {
+    this.chatResponse = null;
+    this.userInput = '';
     const response = confirm("New discussion ? ( You are going to delete the historical ).");
     if (response) {
       this.patgptService.delPatGptHistorical().subscribe(response => {

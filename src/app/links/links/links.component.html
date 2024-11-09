@@ -4,22 +4,23 @@
             <small class="small-red-bold">{{ "LINKS.COMMENT" | translate }}</small>
             <div class="card" *ngFor="let c of categories">
                 <div class="card-header">
-                      <b>{{c.categoryName}} :</b>
+                    <b>{{c.categoryName}} :</b>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item" >                        
+                    <li class="list-group-item">
                         <ul>
                             <ng-container *ngFor="let u of urllinks">
                                 <li *ngIf="u.categoryLinkID === c.categoryLinkID && isVisible(u)">
-                                    <input type="checkbox" [checked]="u.visibility === 'public'" (click)="submitVisibilityChange(u)" [disabled]="!canEdit(u)"> 
-                                    <a href="{{ u.url }}" target="_blank"> {{ u.linkName }}</a> 
+                                    <input type="checkbox" [checked]="u.visibility === 'public'"
+                                        (click)="submitVisibilityChange(u)" [disabled]="!canEdit(u)">
+                                    <a href="{{ u.url }}" target="_blank"> {{ u.linkName }}</a>
                                 </li>
                             </ng-container>
-                        </ul>                        
-                    </li>                    
+                        </ul>
+                    </li>
                     <br>
-                </ul>                               
-            </div>                        
+                </ul>
+            </div>
         </div>
     </div>
 </div>

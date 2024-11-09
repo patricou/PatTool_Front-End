@@ -33,6 +33,8 @@ import { LinksModule } from './links/links.module';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { PatgptComponent } from './patgpt/patgpt/patgpt.component';
 import { PatgptModule } from './patgpt/patgpt.module';
+import { IothomeComponent } from './iothome/iothome.component';
+import { IotService } from './services/iot.service';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: Http) {
@@ -42,7 +44,8 @@ export function HttpLoaderFactory(http: Http) {
 @NgModule({
 	declarations: [
 		AppComponent,
-		PageNotFoundComponent
+		PageNotFoundComponent,
+		IothomeComponent
 	],
 	imports: [
 		BrowserModule,
@@ -69,6 +72,7 @@ export function HttpLoaderFactory(http: Http) {
 			{ path: 'results', component: ChatComponent },
 			{ path: 'maps', component: AboutComponent },
 			{ path: 'links', component: LinksComponent },
+			{ path: 'iot', component: IothomeComponent },
 			{ path: 'patgpt', component: PatgptComponent },
 			{ path: 'home', redirectTo: '', pathMatch: 'full' },
 			{ path: '**', component: PageNotFoundComponent }
@@ -85,6 +89,7 @@ export function HttpLoaderFactory(http: Http) {
 		MembersService,
 		FileService,
 		CommonvaluesService,
+		IotService,
 		// to be able to do F5 in prod		
 		{ provide: LocationStrategy, useClass: HashLocationStrategy },
 		{ provide: TranslateLoader, useFactory: HttpLoaderFactory, deps: [Http] }

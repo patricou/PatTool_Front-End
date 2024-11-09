@@ -11,6 +11,7 @@
         "LOGIN": "Connexion",
         "LOGOUT": "Déconnexion",
         "LINKS": "Liens",
+        "IOT": "IOT",
         "IA": "IA",
         "PATGPT": "PatGPT"
     },
@@ -24,6 +25,11 @@
     },
     "LINKS": {
         "TITLE": "Liens preferés",
+        "REF": "...",
+        "COMMENT": "Box cochées sont public"
+    },
+    "IOT": {
+        "TITLE": "Controle Maison",
         "REF": "...",
         "COMMENT": "Box cochées sont public"
     },

@@ -85,5 +85,4 @@ export class LinksComponent implements OnInit {
     return v;
   }
 
-
 }

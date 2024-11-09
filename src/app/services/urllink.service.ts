@@ -30,9 +30,9 @@ export class UrllinkService {
 		})
 	}
 
-	getLinks(user:Member): Observable<any> {
+	getLinks(user: Member): Observable<any> {
 		return this.getHeaderWithToken().concatMap(headers =>
-			this._http.get(this.API_URL + "urllink/"+user.id, { headers: headers })
+			this._http.get(this.API_URL + "urllink/" + user.id, { headers: headers })
 				.map(res => res.json()))
 	}
 
