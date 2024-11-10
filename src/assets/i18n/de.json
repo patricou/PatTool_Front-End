@@ -11,6 +11,7 @@
         "LOGIN": "Anmelden",
         "LOGOUT": "Abmelden",
         "LINKS": "Links",
+        "IOT": "Iot",
         "IA": "KI",
         "PATGPT": "PatGPT"
     },
@@ -26,6 +27,11 @@
         "TITLE": "Bevorzugte Links",
         "REF": "...",
         "COMMENT": "Angekreuzte Felder sind öffentlich"
+    },
+    "IOT": {
+        "TITLE": "Haussteuerung",
+        "OPCLG": "Tor Öffnen/Schließen",
+        "COMMENT": "..."
     },
     "EVENTHOME": {
         "EVENTSLIST": "Veranstaltungsliste:",

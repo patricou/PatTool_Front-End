@@ -11,6 +11,7 @@
         "LOGIN": "ログイン",
         "LOGOUT": "ログアウト",
         "LINKS": "リンク",
+        "IOT": "モノのインターネット",
         "IA": "AI",
         "PATGPT": "PatGPT"
     },
@@ -26,6 +27,11 @@
         "TITLE": "お気に入りのリンク",
         "REF": "...",
         "COMMENT": "チェックボックスは公開されています"
+    },
+    "IOT": {
+        "TITLE": "ホームコントロール",
+        "OPCLG": "ゲートの開閉",
+        "COMMENT": "..."
     },
     "EVENTHOME": {
         "EVENTSLIST": "活動リスト：",

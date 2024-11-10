@@ -11,7 +11,8 @@
         "LOGIN": "Iniciar sesión",
         "LOGOUT": "Cerrar sesión",
         "LINKS": "URLs",
-        "IA": "IA",
+        "IOT": "IoT",
+        "IA": "AI",
         "PATGPT": "PatGPT"
     },
     "HOME": {
@@ -26,6 +27,11 @@
         "TITLE": "URLs preferidas",
         "REF": "...",
         "COMMENT": "Las casillas marcadas son públicas"
+    },
+    "IOT": {
+        "TITLE": "Control de Casa",
+        "OPCLG": "Apertura/Cierre de Portón",
+        "COMMENT": "..."
     },
     "EVENTHOME": {
         "EVENTSLIST": "Lista de actividades:",

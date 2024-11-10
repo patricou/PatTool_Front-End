@@ -11,6 +11,7 @@
         "LOGIN": "登录",
         "LOGOUT": "登出",
         "LINKS": "链接",
+        "IOT": "物联网",
         "IA": "人工智能",
         "PATGPT": "PatGPT"
     },
@@ -26,6 +27,11 @@
         "TITLE": "喜欢的链接",
         "REF": "...",
         "COMMENT": "选中的框是公开的"
+    },
+    "IOT": {
+        "TITLE": "家庭控制",
+        "OPCLG": "开/关大门",
+        "COMMENT": "..."
     },
     "EVENTHOME": {
         "EVENTSLIST": "活动列表：",

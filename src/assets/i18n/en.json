@@ -11,8 +11,8 @@
         "LOGIN": "Login",
         "LOGOUT": "Logout",
         "LINKS": "Urls",
-        "IOT": "IOT",
-        "IA": "IA",
+        "IOT": "IoT",
+        "IA": "AI",
         "PATGPT": "PatGPT"
     },
     "HOME": {
@@ -27,6 +27,11 @@
         "TITLE": "Prefered URLS",
         "REF": "...",
         "COMMENT": "Checked box are public"
+    },
+    "IOT": {
+        "TITLE": "Home Control",
+        "OPCLG": "Gate Open/Close",
+        "COMMENT": "..."
     },
     "EVENTHOME": {
         "EVENTSLIST": "Activities List :",

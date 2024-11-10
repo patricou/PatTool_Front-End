@@ -19,7 +19,7 @@ export class IothomeComponent implements OnInit {
   openOrCLosePortail(): void {
     this._iotService.openOrClosePortail().subscribe(
       response => {
-        this.iotResponse = JSON.stringify(response._body)
+        this.iotResponse = response._body;
         this.messageVisible = true;
 
         // Masquer le message après 25 secondes (25 000 ms)
@@ -37,7 +37,7 @@ export class IothomeComponent implements OnInit {
         setTimeout(() => {
           this.messageVisible = false;
           this.iotResponse = '';
-        }, 25000);
+        }, 21000);
       });
   }
 
