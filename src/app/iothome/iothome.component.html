@@ -1,7 +1,8 @@
 <div class="iot-container">
   <h2>{{"IOT.TITLE" | translate }}</h2>
   <div>
-    <button (click)="openOrCLosePortail()" class="btn btn-primary btn-sm m-1">{{"IOT.OPCLG" | translate }}</button>
+    <button (click)="openOrCLosePortail()" class="btn btn-primary btn-sm m-1" [disabled]="messageVisible">{{"IOT.OPCLG"
+      | translate }}</button>
     <br><br>
     <div *ngIf="messageVisible" class="upfr">
       {{ iotResponse }}
