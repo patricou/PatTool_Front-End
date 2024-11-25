@@ -31,7 +31,8 @@
     "IOT": {
         "TITLE": "Управление домом",
         "OPCLG": "Открытие/Закрытие ворот",
-        "COMMENT": "..."
+        "COMMENT": "...",
+        "TEST": "IOT Testing"
     },
     "EVENTHOME": {
         "EVENTSLIST": "Список мероприятий:",

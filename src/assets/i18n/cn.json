@@ -31,7 +31,8 @@
     "IOT": {
         "TITLE": "家庭控制",
         "OPCLG": "开/关大门",
-        "COMMENT": "..."
+        "COMMENT": "...",
+        "TEST": "IOT Testing"
     },
     "EVENTHOME": {
         "EVENTSLIST": "活动列表：",

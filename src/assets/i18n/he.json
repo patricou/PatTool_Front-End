@@ -31,7 +31,8 @@
     "IOT": {
         "TITLE": "שליטה בבית",
         "OPCLG": "פתיחה/סגירה של שער",
-        "COMMENT": "..."
+        "COMMENT": "...",
+        "TEST": "IOT Testing"
     },
     "EVENTHOME": {
         "EVENTSLIST": "רשימת פעילויות:",

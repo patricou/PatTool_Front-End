@@ -30,4 +30,9 @@ export class IotService {
       this._http.post(this.API_URL + "opcl/", { headers: headers }));
   }
 
+  testEThernetShield(): Observable<any> {
+    return this.getHeaderWithToken().concatMap(headers =>
+      this._http.post(this.API_URL + "test/", { headers: headers }));
+  }
+
 }

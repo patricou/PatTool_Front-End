@@ -31,7 +31,8 @@
     "IOT": {
         "TITLE": "Home Control",
         "OPCLG": "Gate Open/Close",
-        "COMMENT": "..."
+        "COMMENT": "...",
+        "TEST": "IOT Testing"
     },
     "EVENTHOME": {
         "EVENTSLIST": "Activities List :",

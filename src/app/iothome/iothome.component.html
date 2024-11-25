@@ -1,9 +1,14 @@
 <div class="iot-container">
   <h2>{{"IOT.TITLE" | translate }}</h2>
   <div>
+    <button (click)="testEthernetShield()" class="btn btn-info btn-sm m-1" [disabled]="messageTestVisible">{{"IOT.TEST"
+      | translate }}</button>
+    <span *ngIf="messageTestVisible" class="upfr"><BR>
+      {{ iotTestResponse }}
+    </span>
+    <BR>
     <button (click)="openOrCLosePortail()" class="btn btn-primary btn-sm m-1" [disabled]="messageVisible">{{"IOT.OPCLG"
       | translate }}</button>
-    <br><br>
     <div *ngIf="messageVisible" class="upfr">
       {{ iotResponse }}
     </div>

@@ -31,7 +31,8 @@
     "IOT": {
         "TITLE": "التحكم في المنزل",
         "OPCLG": "فتح/إغلاق البوابة",
-        "COMMENT": "..."
+        "COMMENT": "...",
+        "TEST": "IOT Testing"
     },
     "EVENTHOME": {
         "EVENTSLIST": "قائمة الأنشطة :",

@@ -31,7 +31,8 @@
     "IOT": {
         "TITLE": "Contrôle Maison",
         "OPCLG": "Ouverture/Fermeture Portail",
-        "COMMENT": "..."
+        "COMMENT": "...",
+        "TEST": "Test IOT"
     },
     "EVENTHOME": {
         "EVENTSLIST": "Liste des Activités :",

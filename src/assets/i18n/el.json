@@ -31,7 +31,8 @@
     "IOT": {
         "TITLE": "Έλεγχος σπιτιού",
         "OPCLG": "Άνοιγμα/Κλείσιμο Πύλης",
-        "COMMENT": "..."
+        "COMMENT": "...",
+        "TEST": "IOT Testing"
     },
     "EVENTHOME": {
         "EVENTSLIST": "Λίστα Δραστηριοτήτων:",
