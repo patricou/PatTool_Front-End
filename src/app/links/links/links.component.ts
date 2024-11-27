@@ -20,7 +20,7 @@ export class LinksComponent implements OnInit {
   constructor(private _memberService: MembersService, private _urlLinkService: UrllinkService, private _commonValuesService: CommonvaluesService) { }
 
   ngOnInit() {
-    // to get urls when user.id is nnot empty
+    // to get urls when user.id is not empty
     this.waitForNonEmptyValue().then(() => {
       let now = new Date();
 
@@ -69,8 +69,6 @@ export class LinksComponent implements OnInit {
       },
       error => {
         console.error('An error occurred while updating visibility', error);
-        // Optionally, revert the visibility toggle in case of error
-
       }
     );
   }
@@ -80,7 +78,6 @@ export class LinksComponent implements OnInit {
   }
 
   isVisible(u: urllink): boolean {
-
     let v = u.author.id === this.user.id || u.visibility === 'public';
     return v;
   }

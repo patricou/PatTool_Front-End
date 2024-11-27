@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Headers, Http, RequestOptions } from '@angular/http';
 import { KeycloakService } from 'app/keycloak/keycloak.service';
+import { Member } from 'app/model/member';
 import { environment } from 'environments/environment';
 import { Observable } from 'rxjs';
 
@@ -25,14 +26,14 @@ export class IotService {
     })
   }
 
-  openOrClosePortail(): Observable<any> {
+  openOrClosePortail(user: Member): Observable<any> {
     return this.getHeaderWithToken().concatMap(headers =>
-      this._http.post(this.API_URL + "opcl/", { headers: headers }));
+      this._http.post(this.API_URL + "opcl/", JSON.stringify(user), { headers: headers }));
   }
 
-  testEThernetShield(): Observable<any> {
+  testEThernetShield(user: Member): Observable<any> {
     return this.getHeaderWithToken().concatMap(headers =>
-      this._http.post(this.API_URL + "test/", { headers: headers }));
+      this._http.post(this.API_URL + "testarduino/", JSON.stringify(user), { headers: headers }));
   }
 
 }

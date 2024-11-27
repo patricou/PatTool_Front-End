@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Member } from 'app/model/member';
 import { IotService } from 'app/services/iot.service';
+import { MembersService } from 'app/services/members.service';
 
 @Component({
   selector: 'app-iothome',
@@ -8,18 +10,19 @@ import { IotService } from 'app/services/iot.service';
 })
 export class IothomeComponent implements OnInit {
 
+  public user: Member = this._memberService.getUser();
   iotResponse: string = '';
   iotTestResponse: string = '';
   messageVisible: boolean = false;
   messageTestVisible: boolean = false;
 
-  constructor(private _iotService: IotService) { }
+  constructor(private _memberService: MembersService, private _iotService: IotService) { }
 
   ngOnInit() {
   }
 
   openOrCLosePortail(): void {
-    this._iotService.openOrClosePortail().subscribe(
+    this._iotService.openOrClosePortail(this.user).subscribe(
       response => {
         this.iotResponse = response._body;
         this.messageVisible = true;
@@ -44,7 +47,7 @@ export class IothomeComponent implements OnInit {
   }
 
   testEthernetShield(): void {
-    this._iotService.testEThernetShield().subscribe(
+    this._iotService.testEThernetShield(this.user).subscribe(
       response => {
         console.log("Response from Arduino : " + JSON.stringify(response._body));
         this.iotTestResponse = response._body;
