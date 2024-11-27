@@ -13,7 +13,6 @@ export class IothomeComponent implements OnInit {
   messageVisible: boolean = false;
   messageTestVisible: boolean = false;
 
-
   constructor(private _iotService: IotService) { }
 
   ngOnInit() {
@@ -36,7 +35,7 @@ export class IothomeComponent implements OnInit {
         this.iotResponse = error.message;
         this.messageVisible = true;
 
-        // Masquer le message après 25 secondes (25 000 ms)
+        // Masquer le message après 21 secondes (21 000 ms)
         setTimeout(() => {
           this.messageVisible = false;
           this.iotResponse = '';
@@ -51,23 +50,22 @@ export class IothomeComponent implements OnInit {
         this.iotTestResponse = response._body;
         this.messageTestVisible = true;
 
-        // Masquer le message après 25 secondes (25 000 ms)
+        // Masquer le message après 500 ms
         setTimeout(() => {
           this.messageTestVisible = false;
           this.iotTestResponse = '';
-        }, 2000);
+        }, 500);
       },
       error => {
         // En cas d'erreur
         this.iotTestResponse = error.message;
         this.messageTestVisible = true;
 
-        // Masquer le message après 25 secondes (25 000 ms)
+        // Masquer le message après 5 secondes (5 000 ms)
         setTimeout(() => {
           this.messageTestVisible = false;
           this.iotTestResponse = '';
         }, 5000);
       });
   }
-
 }
