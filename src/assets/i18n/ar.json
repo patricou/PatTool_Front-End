@@ -32,7 +32,7 @@
         "TITLE": "التحكم في المنزل",
         "OPCLG": "فتح/إغلاق البوابة",
         "COMMENT": "...",
-        "TEST": "IOT Testing"
+        "TEST": "اختبار إنترنت الأشياء"
     },
     "EVENTHOME": {
         "EVENTSLIST": "قائمة الأنشطة :",

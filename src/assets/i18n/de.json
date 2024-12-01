@@ -32,7 +32,7 @@
         "TITLE": "Haussteuerung",
         "OPCLG": "Tor Öffnen/Schließen",
         "COMMENT": "...",
-        "TEST": "IOT Testing"
+        "TEST": "IOT-Tests"
     },
     "EVENTHOME": {
         "EVENTSLIST": "Veranstaltungsliste:",

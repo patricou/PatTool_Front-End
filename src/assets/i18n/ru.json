@@ -32,7 +32,7 @@
         "TITLE": "Управление домом",
         "OPCLG": "Открытие/Закрытие ворот",
         "COMMENT": "...",
-        "TEST": "IOT Testing"
+        "TEST": "Тестирование IoT"
     },
     "EVENTHOME": {
         "EVENTSLIST": "Список мероприятий:",

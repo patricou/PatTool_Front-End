@@ -32,7 +32,7 @@
         "TITLE": "家庭控制",
         "OPCLG": "开/关大门",
         "COMMENT": "...",
-        "TEST": "IOT Testing"
+        "TEST": " 物联网测试"
     },
     "EVENTHOME": {
         "EVENTSLIST": "活动列表：",

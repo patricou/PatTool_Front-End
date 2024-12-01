@@ -32,7 +32,7 @@
         "TITLE": "Control de Casa",
         "OPCLG": "Apertura/Cierre de Portón",
         "COMMENT": "...",
-        "TEST": "IOT Testing"
+        "TEST": "Pruebas de IoT"
     },
     "EVENTHOME": {
         "EVENTSLIST": "Lista de actividades:",

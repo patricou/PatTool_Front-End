@@ -32,7 +32,7 @@
         "TITLE": "ホームコントロール",
         "OPCLG": "ゲートの開閉",
         "COMMENT": "...",
-        "TEST": "IOT Testing"
+        "TEST": "IoTテスト"
     },
     "EVENTHOME": {
         "EVENTSLIST": "活動リスト：",
